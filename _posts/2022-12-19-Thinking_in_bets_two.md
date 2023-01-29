@@ -2,7 +2,7 @@
 layout: post
 title: Thinking in bets part II
 categories: [book, review, essay, game theory, heuristics]
-excerpt: This is the continuation of the Thinking in bets Part I. Please, refer here to read the first part of the essay. When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior. Let's check why.
+excerpt: "This is the continuation of the Thinking in bets Part I. Please, refer here to read the first part of the essay. When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior. Let's check why."
 ---
 
 In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke's book "Thinking in bets" about real-world decision-making.
