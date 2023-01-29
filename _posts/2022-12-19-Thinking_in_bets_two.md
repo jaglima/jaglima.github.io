@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Part two from Thinking in Bets
+title: Thinking in Bets (part two)
 categories: [book, review, essay, game theory, heuristics]
 excerpt: "This is the continuation of the Thinking in bets Part I. Please, refer here to read the first part of the essay. When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior. Let's check why."
 ---
