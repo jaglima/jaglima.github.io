@@ -2,7 +2,7 @@
 layout: post
 title: Thinking in bets 
 categories: [book, review, essay, game theory, heuristics]
-excerpt: This is my first blog post. Let's see how much effort I gonna put in this small project.  
+excerpt: In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke's book "Thinking in bets" about real-world decision-making.  
 ---
 
 In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke's book "Thinking in bets" about real-world decision-making.
