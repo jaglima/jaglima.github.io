@@ -2,32 +2,29 @@
 layout: post
 title: Thinking in Bets (part two)
 categories: [book, review, essay, game theory, heuristics]
-excerpt: "This is the continuation of the Thinking in bets Part I. Please, refer here to read the first part of the essay. When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior. Let's check why."
+excerpt: "A bet is a form of accountability. In the long run, the more objective person will win against the more biased person .It is the obligation to answer for our actions of believed to others. If we are in love with our own opinions, it can cost us a bet. It is skin in the game in the form of social accountability among our pairs."
 ---
 
-In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke's book "Thinking in bets" about real-world decision-making.
+### The solution: face incomplete games like bets
 
-![games](/images/tib2.png "Chess").
+Scientific thinking consists in avoiding all the illusory aspects of reality to focus on the ground truth, the crude factual reality. And to achieve it, being a poker player or a decision-maker, you must go around all the pitfalls that reality, society, and your ego veil in order to make your life soft and sweet. To avoid it, and go towards the principal point of the book thesis, Mrs. Duck recommends **framing your decision analysis like a bet as the definitive turning point to leverage up our decision-making**.
 
-### The problem of learning under uncertainty
+![games](/images/tib3.png "Dice").
 
-When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior. Training and practicing can help but remember: the experts way does not work in these games. Let's check why.
 
-The human decision process follows a very well-defined sequence of a) having a belief, b) making a decision, and then c) having an instantaneous and right outcome (or a set of them). In learning something we need to get that given an action an outcome follows. The outcome must be easily recognizable as a consequence of the action derived from the decision.
+For the purposes of this text, let's consider that, if some outcome results into an outcome in a reproducible way, it is a result of skill. If an outcome occurs as a result of things that we cannot predict, then they are due to luck. In such a situation, any learning process becomes increasingly complex, as we discussed in past sessions.
 
-But this sequence does not hold for incomplete games. Given that incomplete games have delayed outcomes, the player cannot figure out if an outcome comes from a conscious decision or whether it was just from luck. And it breaks a lot of traditional inference techniques. When the direct relationship becomes unclear, the learning process breaks out.
+The decision structure aforementioned of a) having a belief then b) making a decision and then c) having an outcome (or a set of them). Framing it like a bet changes the process to be a) having a belief then b) betting on it and so c) having an outcome (or a set of them).
 
-__Mrs. Duke mention the case where rats learn to conquer a gift after performing some action. At that experiment, they must to press a bar a fixed number of times in order to have a reward. It means that pressing the bar is directly connected to a reward. When changing the experiment to return a reward if the bar is pressed on average N times, everything changes. This new setup rewards rats randomly, but yet in a delimited range. Not surprisingly the learning rate decreases.__
+__The point here is that a totally different mindset springs out when, instead of saying your opinion, you are invited to make a bet on some outcome.__
 
-In the experiment case, the direct connection between cause and consequence was broken up, and it breaks the relationship needed to learn. When uncertainty comes into place, we paralyze.
+Why? There are some reasons. First because when we make a bet, we refine our beliefs in a way that we make explicit what is already implicit considering the risk exposure. It pushes us to field outcomes more objectively into the appropriate buckets because no one wants to lose a bet. It enforces perspective-taking and requires a more open-minded exploration of alternative hypotheses and a consideration of the opposite routines of self-serving bias. Acting as that moves us close to the truth of the matter.
+In addition, it plays with our ego. The desire to win bets makes us relentlessly strive to calibrate our beliefs and predictions about the future to more accurately represent the world. Winning feels good, and it is always a positive update to our personal narrative. Moreover, behavioral psychologists found that losing feels about twice as bad as winning feels. It hurts.
 
-### Human factors
+__A bet is a form of accountability. In the long run, the more objective person will win against the more biased person .It is the obligation to answer for our actions of believed to others. If we are in love with our own opinions, it can cost us a bet. It is skin in the game in the form of social accountability among our pairs.__
 
-Another characteristic of incomplete games is that outcomes can be completely driven by luck or by skill simultaneously. It throws smoke into the process of assessing the player's performance, making it impossible to know how well he is deciding or how lucky he is being. Observing past decisions add too little to our knowledge, just because it is unclear what factor combinations resulted in some outcome.
-From the point of view of players, the narratives and results assessments can be affected by two behavioral components: self-serving bias and motivated reasoning.
+The prospect of a bet makes us examine and refine our beliefs, in this case, the belief about whether luck or skill was the main influence in the way things turn out. When we treat outcome fielding as a bet, it pushes us to field outcomes more objectively and in the appropriate buckets because that is how bets are won.
 
-When watching in retrospect, humans tend to fill up all their narrative gaps. It is curious, but not surprising, that we take credit for good stuff and blame the bad stuff to luck. What was wrong won't be our fault. This is called "self-serving bias". This phenomenon results from our (maybe modern) tendency of trying to show ourselves rational and scientific. When figuring out why something happened we don't goes to search for a plausible explanation but the one that fits our wishes, and keep a positive image and reputation.
+### Final considerations
 
-The second behavioral component is the motivated reason. When giving a result to pursuit, we tend to bring to light all facts that support the results according to our beliefs and to neglect all the facts that contradicts us. Finally, the average human being usually tries to connect the dots (after all they need a rational narrative), preferentially a comfortable one. In these processes are born beautiful histories of intelligence and competence or scary scenarios of bad luck and tragedy to justify the outcomes.
-
-In the next (and final) session we will analyze how the a poker player mindset can be a possible paradigm to face incomplete information games, where a player is suggested to frame decisions like a bet on an possible outcome more than try to aim exact results with his decisions.
+This essay does not aim to exhaust the subject. The reference book Thinking in bets can lead the interested reader in deep details about framing their decisions in incomplete games, as well as organizing teams and systems where this mindset flourishes almost organically. For instance, the "Buddy systems", "dissent channels" and "recruiting yourself from the future" are some examples that can help you to create an environment of accountability and true learning when facing incomplete information situations.
