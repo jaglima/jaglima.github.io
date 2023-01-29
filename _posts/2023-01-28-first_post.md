@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Inaugural post 
+title: Inaugural post  two
 categories: [post, blog]
 excerpt: This is my first blog post. Let's see how much effort I gonna put in this small project.  
 ---
