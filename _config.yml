@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Reverie
+name: Jesse Lima Personal Blog
 
 # Name of the author
-author: Amit Merchant
+author: Jessé Lima
 
 # Short bio or description (displayed in the header)
-description: An elegant Jekyll theme
+description: I am just blogging in plain macarronic english about stuff that draws my attention.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/reverie.png
@@ -21,20 +21,10 @@ avatar: /images/reverie.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: amit.d.merchant@gmail.com
-  facebook:
-  flickr:
+  email: jesselima@protonmail.com
   github: amitmerchant1990/reverie
-  instagram:
   linkedin: 
-  pinterest:
-  rss: rss
-  twitter: amit_merchant
-  stackoverflow: 
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-  playconsole:
-  mastodon: # <your-mastodon-instance>/@<your-user-name> eg. fosstodon.org/@username
+  twitter: jesseaglima
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
