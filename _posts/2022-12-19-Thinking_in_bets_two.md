@@ -31,5 +31,3 @@ When watching in retrospect, humans tend to fill up all their narrative gaps. It
 The second behavioral component is the motivated reason. When giving a result to pursuit, we tend to bring to light all facts that support the results according to our beliefs and to neglect all the facts that contradicts us. Finally, the average human being usually tries to connect the dots (after all they need a rational narrative), preferentially a comfortable one. In these processes are born beautiful histories of intelligence and competence or scary scenarios of bad luck and tragedy to justify the outcomes.
 
 In the next (and final) session we will analyze how the a poker player mindset can be a possible paradigm to face incomplete information games, where a player is suggested to frame decisions like a bet on an possible outcome more than try to aim exact results with his decisions.
-
-Stay tunned for the last part of this serie.
