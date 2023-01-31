@@ -8,7 +8,6 @@ category = ["essay", "data science" , "opinion"]
 
 ## Great expectations
 
-
 ## The infinite growth
 
 ## Fear and loathing
