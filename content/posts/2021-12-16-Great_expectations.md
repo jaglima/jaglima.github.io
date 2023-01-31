@@ -2,7 +2,7 @@
 author = "Jesse Lima"
 title = "Great expectations"
 date = "2021-12-16"
-tags = ["book", "review", "essay", "game theory", "heuristics"]
+tags = ["data science", "essay", "management"]
 category = ["essay", "data science" , "opinion"]
 +++
 
