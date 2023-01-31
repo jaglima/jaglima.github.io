@@ -11,7 +11,7 @@ In studying (and modeling) decision-making methods for real-world competitive si
 
 ![games](/images/tib1.png).
 
-### Complete and incomplete games
+## Complete and incomplete games
 
 To illustrate the concept of complete and incomplete information games, let's turn to poker and chess's opposite characteristics.
 

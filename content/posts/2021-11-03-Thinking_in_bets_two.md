@@ -8,7 +8,7 @@ category = ["essay", "text", "review"]
 
 In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke's book "Thinking in bets" about real-world decision-making.
 
-#### The problem of learning under uncertainty
+## The problem of learning under uncertainty
 
 ![games](/images/tib2.png "Chess").
 

@@ -10,7 +10,7 @@ category = ["essay", "text", "review"]
 Scientific thinking consists in avoiding all the illusory aspects of reality to focus on the ground truth, the crude factual reality. And to achieve it, being a poker player or a decision-maker, you must go around all the pitfalls that reality, society, and your ego veil in order to make your life soft and sweet. To avoid it, and go towards the principal point of the book thesis, Mrs. Duck recommends **framing your decision analysis like a bet as the definitive turning point to leverage up our decision-making**.
 
 
-#### The solution: face incomplete games like bets
+## The solution: face incomplete games like bets
 
 ![games](/images/tib3.png "Dice").
 
@@ -28,6 +28,6 @@ __A bet is a form of accountability. In the long run, the more objective person 
 
 The prospect of a bet makes us examine and refine our beliefs, in this case, the belief about whether luck or skill was the main influence in the way things turn out. When we treat outcome fielding as a bet, it pushes us to field outcomes more objectively and in the appropriate buckets because that is how bets are won.
 
-#### Final considerations
+## Final considerations
 
 This essay does not aim to exhaust the subject. The reference book Thinking in bets can lead the interested reader in deep details about framing their decisions in incomplete games, as well as organizing teams and systems where this mindset flourishes almost organically. For instance, the "Buddy systems", "dissent channels" and "recruiting yourself from the future" are some examples that can help you to create an environment of accountability and true learning when facing incomplete information situations.
