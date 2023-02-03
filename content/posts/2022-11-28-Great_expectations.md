@@ -1,7 +1,7 @@
 +++
 author = "Jesse Lima"
 title = "Great expectations"
-date = "2021-12-16"
+date = "2022-11-28"
 tags = ["data science", "essay", "management"]
 category = ["essay", "data science" , "opinion"]
 +++
