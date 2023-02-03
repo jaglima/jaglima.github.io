@@ -4,6 +4,7 @@ title = "Code base as property"
 date = "2021-12-16"
 tags = ["code", "essay", "business", "admin"]
 category = ["essay", "text", "code", "startups"]
+comments = false
 +++
 
 
