@@ -7,8 +7,6 @@ category = ["reference", "commands", "tech"]
 +++
 
 
-
-
 To use AWS CLI, you need to first make sure your AWS access key credentials are configured properly.
 
 Once you have your AWS access_key_id and secret_access_key, you can either manually add them to the credentials file, or use aws configure command to set it up on your local machine.

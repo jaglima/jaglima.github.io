@@ -7,7 +7,7 @@ category = ["essay", "philosophy" , "opinion"]
 +++
 
 
-[work in progress]
+[WIP]
 
 Truth is not only found through inner contemplation but also, and surely mostly, through action. It is done by inflicting yourself onto the world and seeing how the world reacts to your assaults.
 
