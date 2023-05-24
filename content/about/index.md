@@ -5,15 +5,15 @@ date: 2021-08-24 17:51:42
 
 # Personal 
 
-I am a brazilian, not so young technologist (?) and diletant backpacker. I have been lived between Sao Paulo city and the country side, where my parents still lives and where I grew up.
+I am a Brazilian technologist, not so young, and an occasional backpacker. For most of my life, I have lived between the city of São Paulo and the countryside, where I grew up and where my parents still reside.
 
-I like living outside and doing stuff outside home.
+I enjoy being outdoors, going to the gym, indulging in good food and beer. In my free time, I engage in various small obsessions depending on how life presents them to me. These can range from woodworking to poker playing.  
 
 # Academic
 
-I studied Meteorology with a MSc in Computer Science, but I didn't fully fitted in the academy. After some time I discovered that I like at most going after the theory and methods aiming to build things than the opposite. Usually, starting from the theory doesn't thrill me as much.
+I studied Meteorology with a major in Computer Science. Then I pursued a MSc in Computer Science. Since my MSc experience I keep studing here and there in an indepentend way. I discovered that I like at most going after the theory and methods aiming to build things than the opposite. 
 
-# Personality
+# Professionaly
 
 I have a taste for investigation and pioneering. I had my best times being part of inaugural teams, being the first one (more than once) in some positions where I worked. 
 
