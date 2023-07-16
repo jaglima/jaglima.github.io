@@ -10,7 +10,7 @@ In the literature, it is possible to find different references and conceptualiza
 
 Lynnerup et al. (2020) disserted about what they called a "confused taxonomy" that creates "confusion on the meaning of repeatability, reproducibility, and replicability, which, in turn, negatively affects the overall development of science." Some works do not distinguish between reproducibility and replicability.
 
-![Experiments](../../static/images/pipeline2.png "Experiments").
+![Experiments](/images/pipeline2.png "Experiments").
 
 One way to define the three concepts is:
 
