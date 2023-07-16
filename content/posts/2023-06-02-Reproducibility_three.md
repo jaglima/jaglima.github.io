@@ -10,8 +10,6 @@ category = ["blog", "reproducibility", "SoR"]
 __Reproducibility and provenance in Machine Learning.__
 
 
-![Experiments](/images/pipeline3.png)
-
 The paper by Gundersen et al. (2022) provides an interesting description of the sources of irreproducibility in Machine Learning. The authors have compiled an extensive list of factors that can lead to irreproducibility in machine learning experiments. According to them, irreproducibility can arise from the following causes:
 
 Study factors: selective tuning, p-hacking, p-fishing, experiment initialization, unsuited experimental design.
@@ -25,6 +23,10 @@ Observation factors: dataset bias, preprocessing, data splits, environment prope
 Evaluation factors: selective reporting, sampled metrics, error estimation, statistical analysis, over-claiming results, etc.
 
 Documentation factors: readability, experiment design details, workflow, implementation details, stale URLs, access to data, and access to code.
+
+
+![Experiments](/images/pipeline3.png)
+
 
 Such sources appear at different stages during the experimental phase and may even persist in production environments, leading to the accumulation of technical debt (Sculley et al., 2015). The problem or irreproducibility is also discussed in the work of Sugimura et al. (2018), referring to the "delivery fast and break things" recent trend prevalent in software engineering. This culture holds true in the realm of data science and machine learning as well. The velocity of deliverables usually comes at the expense of reproducibility, among other victims.
 
