@@ -16,21 +16,21 @@ As we discussed in the previous post [link here](/content/posts/2023-06-08-Repro
 ![Experiments](/images/pipeline5.png)
 
 
-As mentioned in this 2020 survey, many projects have been initiated to meet the challenges of MLOps. They vary from point solutions to attend just one step in the process to broad scopes, aiming for end-to-end management. Some are available as software packages, others as SaaS. 
+Many projects have been initiated to meet the challenges of MLOps. They vary from point solutions to attend just one step in the process to broad scopes, aiming for end-to-end management. Some are available as software packages, others as SaaS. 
 
 Curiously, most of these tools end up offering features in different layers we have discussed (i.e. data, feature, scoring, and evaluation), which is evidence of a market in an exploratory process. This lack of standards makes any assessment difficult. Some projects try to incorporate any low-hanging fruit feature into their core functionality. Then, they come up with a tool with elements of all layers.
 
 Keeping in mind the division into data, feature, scoring, and evaluation from here, there are two groups of tools oriented to the initial phases of the discovery/research process. They are:
 
-Data and Pipeline Versioning: Platforms dealing with ingestion, processing, and exposing of features for model training and inference. They also enable collaboration and discoverability of already existing Feature Sets throughout the organization. Provide provenance and lineage for data in different levels of complexity.
+**Data and Pipeline Versioning**: Platforms dealing with ingestion, processing, and exposing of features for model training and inference. They also enable collaboration and discoverability of already existing Feature Sets throughout the organization. Provide provenance and lineage for data in different levels of complexity.
 
-Metadata Stores/Experiment Trackers: they are specifically built to store metadata about ML experiments and expose it to stakeholders. They help the debugging, comparing, and collaborating on experiments. It is possible to divide in Experiment Tracker and a Model Registry.
+**Metadata Stores/Experiment Trackers**: they are specifically built to store metadata about ML experiments and expose it to stakeholders. They help the debugging, comparing, and collaborating on experiments. It is possible to divide in Experiment Tracker and a Model Registry.
 
 On the other hand, there are projects offering reproducibility elements like hyperparameter search, experiment versioning, etc. However, they are better suited for projects in the production/monitoring phases. They are:
 
-Pipeline frameworks: They operate within the realm of production, similar to Data Engineering workflows. Their usual goal is to allow any ML/AI products to be served across a wide range of architectures and integrate all the low-hanging fruits along the way. For instance, pipelines adding hyperparameter optimization tasks, experiment tracking integrations, boilerplate containerized deployment, etc.
+**Pipeline frameworks**: They operate within the realm of production, similar to Data Engineering workflows. Their usual goal is to allow any ML/AI products to be served across a wide range of architectures and integrate all the low-hanging fruits along the way. For instance, pipelines adding hyperparameter optimization tasks, experiment tracking integrations, boilerplate containerized deployment, etc.
 
-Deployment and Observability: They focus on deploying models for real-time inference and monitoring model quality once they are deployed in production. Their aim is to facilitate post-deployment control tasks such as monitoring feature drift, conducting A/B testing, and more.
+**Deployment and Observability**: They focus on deploying models for real-time inference and monitoring model quality once they are deployed in production. Their aim is to facilitate post-deployment control tasks such as monitoring feature drift, conducting A/B testing, and more.
 
 With real world examples, we can mention some interesting examples:
 
