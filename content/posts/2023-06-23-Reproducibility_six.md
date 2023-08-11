@@ -14,7 +14,7 @@ We are specifically interested in tools that capture provenance in Machine Learn
 
 ![Experiments](/images/pipeline6.png)
 
-In this scenario, we are particularly enthusiastic about the noWorkflow project. According to the authors in Pimentel (2017), noWorkflow is an open-source tool designed to systematically and transparently collect provenance from Python scripts. Noworkflow captures data about the script execution and tracks the evolution of the script over time. In recent versions, the tool has evolved to enable provenance capture of experiments through Jupyter Notebooks.
+In this scenario, i'm particularly enthusiastic about the noWorkflow project. According to the authors in Pimentel (2017), noWorkflow is an open-source tool designed to systematically and transparently collect provenance from Python scripts. Noworkflow captures data about the script execution and tracks the evolution of the script over time. In recent versions, the tool has evolved to enable provenance capture of experiments through Jupyter Notebooks.
 
 Based on our review, I believe that noWorkflow shares the most resemblance to data and pipeline versioning tools. It is lightweight in its setup and config needs, is strongly based on the command line, and serves as a metadata store and experiment tracker. Among the tools examined, the most similar ones to noWorkflow are Pachyderm and DVC.
 
