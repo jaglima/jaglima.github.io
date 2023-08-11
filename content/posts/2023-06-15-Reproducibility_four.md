@@ -1,7 +1,7 @@
 +++
 author = "Jesse Lima"
 title = "Data, Features Scoring and Evaluation provenance"
-date = "2023-06-08"
+date = "2023-06-15"
 tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR"]
 +++
