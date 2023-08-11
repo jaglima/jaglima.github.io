@@ -32,7 +32,7 @@ On the other hand, there are projects offering reproducibility elements like hyp
 
 **Deployment and Observability**: They focus on deploying models for real-time inference and monitoring model quality once they are deployed in production. Their aim is to facilitate post-deployment control tasks such as monitoring feature drift, conducting A/B testing, and more.
 
-With real world examples, we can mention some interesting examples:
+With real world examples, we can mention some interesting cases:
 
 The only tool offering coverage for all aforementioned layers is Weights & Biases. It is a paid SaaS solution.
 
