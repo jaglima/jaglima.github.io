@@ -51,7 +51,7 @@ weight = 4
   colortheme = "classic" # dark, light, white, or classic
   rss = false # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
-  showAllPostsArchive = false # default
+  showAllPostsArchive = true # default
 
   # Home page settings
   description = "This is my personal blog. Here I write about tech, science, IA and other related stuff"
