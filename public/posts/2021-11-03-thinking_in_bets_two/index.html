@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Thinking in Bets (part two) | Jesse Lima</title>
+  <link rel = 'canonical' href = 'https://example.com/posts/2021-11-03-thinking_in_bets_two/'>
+  <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Thinking in Bets (part two)" />
+<meta property="og:description" content="In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke&rsquo;s book &ldquo;Thinking in bets&rdquo; about real-world decision-making.
+The problem of learning under uncertainty .
+When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/2021-11-03-thinking_in_bets_two/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-03T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Thinking in Bets (part two)"/>
+<meta name="twitter:description" content="In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke&rsquo;s book &ldquo;Thinking in bets&rdquo; about real-world decision-making.
+The problem of learning under uncertainty .
+When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://example.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://example.com/posts/2021-11-01-thinking_in_bets_one/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://example.com/posts/2021-11-16-thinking_in_bets_three/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&text=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&title=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&is_video=false&description=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Thinking%20in%20Bets%20%28part%20two%29&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&title=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&title=Thinking%20in%20Bets%20%28part%20two%29" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&name=Thinking%20in%20Bets%20%28part%20two%29&description=In%20studying%20%28and%20modeling%29%20decision-making%20methods%20for%20real-world%20competitive%20situations%2c%20game%20theorists%20have%20identified%20two%20very%20clear%20distinctions%20between%20games.%20In%20this%20essay%2c%20we%20will%20discuss%20the%20differences%20between%20such%20games%20and%20freely%20comment%20on%20the%20ideas%20from%20Annie%20Duke%26rsquo%3bs%20book%20%26ldquo%3bThinking%20in%20bets%26rdquo%3b%20about%20real-world%20decision-making.%0aThe%20problem%20of%20learning%20under%20uncertainty%20.%0aWhen%20making%20decisions%2c%20someone%20must%20come%20up%20with%20a%20supporting%20belief%20to%20take%20their%20decision.%20Such%20belief%20can%20come%20from%20diverse%20sources%3a%20their%20experiences%2c%20theoretical%20knowledge%2c%20training%2c%20intuition%2c%20prejudices%2c%20or%20just%20herd%20behavior." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&t=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem-of-learning-under-uncertainty">The problem of learning under uncertainty</a>
+      <ul>
+        <li><a href="#human-factors">Human factors</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Thinking in Bets (part two)
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-03</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/book" rel="tag">book</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/review" rel="tag">review</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/essay" rel="tag">essay</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/game-theory" rel="tag">game theory</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/heuristics" rel="tag">heuristics</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke&rsquo;s book &ldquo;Thinking in bets&rdquo; about real-world decision-making.</p>
+<h2 id="the-problem-of-learning-under-uncertainty">The problem of learning under uncertainty</h2>
+<p><img src="/images/tib2.png" alt="games" title="Chess">.</p>
+<p>When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior. Training and practicing can help but remember: the experts way does not work in these games. Let&rsquo;s check why.</p>
+<p>The human decision process follows a very well-defined sequence of a) having a belief, b) making a decision, and then c) having an instantaneous and right outcome (or a set of them). In learning something we need to get that given an action an outcome follows. The outcome must be easily recognizable as a consequence of the action derived from the decision.</p>
+<p>But this sequence does not hold for incomplete games. Given that incomplete games have delayed outcomes, the player cannot figure out if an outcome comes from a conscious decision or whether it was just from luck. And it breaks a lot of traditional inference techniques. When the direct relationship becomes unclear, the learning process breaks out.</p>
+<p><strong>Mrs. Duke mention the case where rats learn to conquer a gift after performing some action. At that experiment, they must to press a bar a fixed number of times in order to have a reward. It means that pressing the bar is directly connected to a reward. When changing the experiment to return a reward if the bar is pressed on average N times, everything changes. This new setup rewards rats randomly, but yet in a delimited range. Not surprisingly the learning rate decreases.</strong></p>
+<p>In the experiment case, the direct connection between cause and consequence was broken up, and it breaks the relationship needed to learn. When uncertainty comes into place, we paralyze.</p>
+<h3 id="human-factors">Human factors</h3>
+<p>Another characteristic of incomplete games is that outcomes can be completely driven by luck or by skill simultaneously. It throws smoke into the process of assessing the player&rsquo;s performance, making it impossible to know how well he is deciding or how lucky he is being. Observing past decisions add too little to our knowledge, just because it is unclear what factor combinations resulted in some outcome.
+From the point of view of players, the narratives and results assessments can be affected by two behavioral components: self-serving bias and motivated reasoning.</p>
+<p>When watching in retrospect, humans tend to fill up all their narrative gaps. It is curious, but not surprising, that we take credit for good stuff and blame the bad stuff to luck. What was wrong won&rsquo;t be our fault. This is called &ldquo;self-serving bias&rdquo;. This phenomenon results from our (maybe modern) tendency of trying to show ourselves rational and scientific. When figuring out why something happened we don&rsquo;t goes to search for a plausible explanation but the one that fits our wishes, and keep a positive image and reputation.</p>
+<p>The second behavioral component is the motivated reason. When giving a result to pursuit, we tend to bring to light all facts that support the results according to our beliefs and to neglect all the facts that contradicts us. Finally, the average human being usually tries to connect the dots (after all they need a rational narrative), preferentially a comfortable one. In these processes are born beautiful histories of intelligence and competence or scary scenarios of bad luck and tragedy to justify the outcomes.</p>
+<p>In the next (and final) session we will analyze how the a poker player mindset can be a possible paradigm to face incomplete information games, where a player is suggested to frame decisions like a bet on an possible outcome more than try to aim exact results with his decisions.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem-of-learning-under-uncertainty">The problem of learning under uncertainty</a>
+      <ul>
+        <li><a href="#human-factors">Human factors</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&text=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&title=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&is_video=false&description=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Thinking%20in%20Bets%20%28part%20two%29&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&title=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&title=Thinking%20in%20Bets%20%28part%20two%29" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&name=Thinking%20in%20Bets%20%28part%20two%29&description=In%20studying%20%28and%20modeling%29%20decision-making%20methods%20for%20real-world%20competitive%20situations%2c%20game%20theorists%20have%20identified%20two%20very%20clear%20distinctions%20between%20games.%20In%20this%20essay%2c%20we%20will%20discuss%20the%20differences%20between%20such%20games%20and%20freely%20comment%20on%20the%20ideas%20from%20Annie%20Duke%26rsquo%3bs%20book%20%26ldquo%3bThinking%20in%20bets%26rdquo%3b%20about%20real-world%20decision-making.%0aThe%20problem%20of%20learning%20under%20uncertainty%20.%0aWhen%20making%20decisions%2c%20someone%20must%20come%20up%20with%20a%20supporting%20belief%20to%20take%20their%20decision.%20Such%20belief%20can%20come%20from%20diverse%20sources%3a%20their%20experiences%2c%20theoretical%20knowledge%2c%20training%2c%20intuition%2c%20prejudices%2c%20or%20just%20herd%20behavior." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2021-11-03-thinking_in_bets_two%2f&t=Thinking%20in%20Bets%20%28part%20two%29" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jesse Lima 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

@@ -6,12 +6,10 @@ tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR"]
 +++
 
-
 __Conceptual layers in Machine Learning pipelines.__
 
 
 Going one step further into the real-life provenance questions, a good start is to adopt some terminology to prepare our way.
-
 
 ![Experiments](/images/pipeline4.png)
 

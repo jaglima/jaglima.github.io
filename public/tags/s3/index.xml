@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>s3 on Jesse Lima</title>
+    <link>https://example.com/tags/s3/</link>
+    <description>Recent content in s3 on Jesse Lima</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jesse Lima</copyright>
+    <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essential AWS S3 CLI Command Cheat Sheet</title>
+      <link>https://example.com/posts/2023-01-10-s3_cli/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/2023-01-10-s3_cli/</guid>
+      <description>For my quick reference, I&amp;rsquo;ve created this cheat sheet on managing files in AWS S3 bucket. Here it is:
+s3 make bucket (create bucket) aws s3 mb s3://tgsbucket &amp;ndash;region us-west-2
+s3 remove bucket aws s3 rb s3://tgsbucket aws s3 rb s3://tgsbucket &amp;ndash;force
+s3 ls commands aws s3 ls aws s3 ls s3://tgsbucket aws s3 ls s3://tgsbucket &amp;ndash;recursive aws s3 ls s3://tgsbucket &amp;ndash;recursive &amp;ndash;human-readable &amp;ndash;summarize
+s3 cp commands aws s3 cp getdata.</description>
+    </item>
+    
+  </channel>
+</rss>

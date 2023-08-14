@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> noWorkflow as provenance capture tool | Jesse Lima</title>
+  <link rel = 'canonical' href = 'https://example.com/posts/2023-06-23-reproducibility_six/'>
+  <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="noWorkflow as provenance capture tool" />
+<meta property="og:description" content="MLOps tools, Jupyter Notebooks and noWorkflow
+We briefly discussed some MLOps tools that offer provenance in this previous post. We encountered a rich and diverse ecosystem with multiple tools allowing different levels of reproducibility. By levels, we consider i) tools allowing provenance at different stages of a typical experiment and ii) tools that are more suitable for the experimental phases of a project, while others fit better for post-deployment phases." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/2023-06-23-reproducibility_six/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-23T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="noWorkflow as provenance capture tool"/>
+<meta name="twitter:description" content="MLOps tools, Jupyter Notebooks and noWorkflow
+We briefly discussed some MLOps tools that offer provenance in this previous post. We encountered a rich and diverse ecosystem with multiple tools allowing different levels of reproducibility. By levels, we consider i) tools allowing provenance at different stages of a typical experiment and ii) tools that are more suitable for the experimental phases of a project, while others fit better for post-deployment phases."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://example.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://example.com/posts/2023-06-15-reproducibility_four/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&text=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&is_video=false&description=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=noWorkflow%20as%20provenance%20capture%20tool&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&name=noWorkflow%20as%20provenance%20capture%20tool&description=MLOps%20tools%2c%20Jupyter%20Notebooks%20and%20noWorkflow%0aWe%20briefly%20discussed%20some%20MLOps%20tools%20that%20offer%20provenance%20in%20this%20previous%20post.%20We%20encountered%20a%20rich%20and%20diverse%20ecosystem%20with%20multiple%20tools%20allowing%20different%20levels%20of%20reproducibility.%20By%20levels%2c%20we%20consider%20i%29%20tools%20allowing%20provenance%20at%20different%20stages%20of%20a%20typical%20experiment%20and%20ii%29%20tools%20that%20are%20more%20suitable%20for%20the%20experimental%20phases%20of%20a%20project%2c%20while%20others%20fit%20better%20for%20post-deployment%20phases." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&t=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        noWorkflow as provenance capture tool
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-06-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-06-23</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/sor" rel="tag">SoR</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ucsc" rel="tag">UCSC</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/reproducibility" rel="tag">reproducibility</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/data-science" rel="tag">Data Science</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/machine-learning" rel="tag">Machine Learning</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p><strong>MLOps tools, Jupyter Notebooks and noWorkflow</strong></p>
+<p>We briefly discussed some MLOps tools that offer provenance in this previous post. We encountered a rich and diverse ecosystem with multiple tools allowing different levels of reproducibility. By levels, we consider i) tools allowing provenance at different stages of a typical experiment and ii) tools that are more suitable for the experimental phases of a project, while others fit better for post-deployment phases.</p>
+<p>We are specifically interested in tools that capture provenance in Machine Learning and Data Science typical experiments. These tools should capture provenance in feature, score, and evaluation layers (as discussed in this post). Furthermore, our focus is primarily on the experimental phases experiment’s lifecycle rather than the deployment phases.</p>
+<p><img src="/images/pipeline6.png" alt="Experiments"></p>
+<p>In this scenario, i&rsquo;m particularly enthusiastic about the noWorkflow project. According to the authors in Pimentel (2017), noWorkflow is an open-source tool designed to systematically and transparently collect provenance from Python scripts. Noworkflow captures data about the script execution and tracks the evolution of the script over time. In recent versions, the tool has evolved to enable provenance capture of experiments through Jupyter Notebooks.</p>
+<p>Based on our review, I believe that noWorkflow shares the most resemblance to data and pipeline versioning tools. It is lightweight in its setup and config needs, is strongly based on the command line, and serves as a metadata store and experiment tracker. Among the tools examined, the most similar ones to noWorkflow are Pachyderm and DVC.</p>
+<p><strong>The Jupyter Notebooks as literate programming enablers</strong></p>
+<p>Donald Knuth (Knuth, D. E. (1984)) introduced the concept of literate programming as an approach to software development that emphasizes the readability and understandability of code. Currently, a great tool allowing literate programming are the Jupyter Notebooks.</p>
+<p>According to Pimentel (2021), Jupyter Notebooks established itself as the basis of scientific experimentation by supporting the creation of documents that combine code, text, and execution results with visualizations and other rich media. The self-documenting aspects and the ability to reproduce results have been touted as significant benefits of notebooks.</p>
+<p>Nevertheless, notebooks are prone to induce bad practices in software development. All its flexibility facilitates bad practices that hinder the reasoning and reproducibility of notebooks as artifacts. It happens when cells are allowed to be executed out-of-order, non-executed, or even allowing hidden states. At this point, reproducibility emerges as an outstanding solution while provenance capture permits identifying the correct cell execution order and hidden states&rsquo; presence.</p>
+<p>In the next post, we will go further into the noWorkflow features related to Jupyter Notebooks’ provenance tracking and its possible uses of it.</p>
+<p><strong>Bibliography:</strong></p>
+<p>Pimentel, J. F., Murta, L., Braganholo, V., &amp; Freire, J. (2017). noWorkflow: A tool for collecting, analyzing, and managing provenance from Python scripts. Proceedings of the VLDB Endowment, 10(12).</p>
+<p>Pimentel, J. F., Murta, L., Braganholo, V., &amp; Freire, J. (2021). Understanding and improving the quality and reproducibility of Jupyter notebooks. Empirical Software Engineering, 26(4), 65.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&text=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&is_video=false&description=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=noWorkflow%20as%20provenance%20capture%20tool&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&name=noWorkflow%20as%20provenance%20capture%20tool&description=MLOps%20tools%2c%20Jupyter%20Notebooks%20and%20noWorkflow%0aWe%20briefly%20discussed%20some%20MLOps%20tools%20that%20offer%20provenance%20in%20this%20previous%20post.%20We%20encountered%20a%20rich%20and%20diverse%20ecosystem%20with%20multiple%20tools%20allowing%20different%20levels%20of%20reproducibility.%20By%20levels%2c%20we%20consider%20i%29%20tools%20allowing%20provenance%20at%20different%20stages%20of%20a%20typical%20experiment%20and%20ii%29%20tools%20that%20are%20more%20suitable%20for%20the%20experimental%20phases%20of%20a%20project%2c%20while%20others%20fit%20better%20for%20post-deployment%20phases." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&t=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jesse Lima 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
