@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Essential AWS S3 CLI Command Cheat Sheet | Jesse Lima</title>
+  <link rel = 'canonical' href = 'https://example.com/posts/2023-01-10-s3_cli/'>
+  <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Essential AWS S3 CLI Command Cheat Sheet" />
+<meta property="og:description" content="For my quick reference, I&rsquo;ve created this cheat sheet on managing files in AWS S3 bucket. Here it is:
+s3 make bucket (create bucket) aws s3 mb s3://tgsbucket &ndash;region us-west-2
+s3 remove bucket aws s3 rb s3://tgsbucket aws s3 rb s3://tgsbucket &ndash;force
+s3 ls commands aws s3 ls aws s3 ls s3://tgsbucket aws s3 ls s3://tgsbucket &ndash;recursive aws s3 ls s3://tgsbucket &ndash;recursive &ndash;human-readable &ndash;summarize
+s3 cp commands aws s3 cp getdata." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/2023-01-10-s3_cli/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-10T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Essential AWS S3 CLI Command Cheat Sheet"/>
+<meta name="twitter:description" content="For my quick reference, I&rsquo;ve created this cheat sheet on managing files in AWS S3 bucket. Here it is:
+s3 make bucket (create bucket) aws s3 mb s3://tgsbucket &ndash;region us-west-2
+s3 remove bucket aws s3 rb s3://tgsbucket aws s3 rb s3://tgsbucket &ndash;force
+s3 ls commands aws s3 ls aws s3 ls s3://tgsbucket aws s3 ls s3://tgsbucket &ndash;recursive aws s3 ls s3://tgsbucket &ndash;recursive &ndash;human-readable &ndash;summarize
+s3 cp commands aws s3 cp getdata."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://example.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://example.com/posts/2023-01-03-aws_configure/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://example.com/posts/2023-05-24-reproducibility_one/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&text=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&title=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&is_video=false&description=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&title=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&title=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&name=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet&description=For%20my%20quick%20reference%2c%20I%26rsquo%3bve%20created%20this%20cheat%20sheet%20on%20managing%20files%20in%20AWS%20S3%20bucket.%20Here%20it%20is%3a%0as3%20make%20bucket%20%28create%20bucket%29%20aws%20s3%20mb%20s3%3a%2f%2ftgsbucket%20%26ndash%3bregion%20us-west-2%0as3%20remove%20bucket%20aws%20s3%20rb%20s3%3a%2f%2ftgsbucket%20aws%20s3%20rb%20s3%3a%2f%2ftgsbucket%20%26ndash%3bforce%0as3%20ls%20commands%20aws%20s3%20ls%20aws%20s3%20ls%20s3%3a%2f%2ftgsbucket%20aws%20s3%20ls%20s3%3a%2f%2ftgsbucket%20%26ndash%3brecursive%20aws%20s3%20ls%20s3%3a%2f%2ftgsbucket%20%26ndash%3brecursive%20%26ndash%3bhuman-readable%20%26ndash%3bsummarize%0as3%20cp%20commands%20aws%20s3%20cp%20getdata." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&t=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Essential AWS S3 CLI Command Cheat Sheet
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-01-10</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          1 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/s3" rel="tag">s3</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/aws" rel="tag">aws</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/commands" rel="tag">commands</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>For my quick reference, I&rsquo;ve created this cheat sheet on managing files in AWS S3 bucket. Here it is:</p>
+<h1 id="s3-make-bucket-create-bucket">s3 make bucket (create bucket)</h1>
+<p>aws s3 mb s3://tgsbucket &ndash;region us-west-2</p>
+<h1 id="s3-remove-bucket">s3 remove bucket</h1>
+<p>aws s3 rb s3://tgsbucket
+aws s3 rb s3://tgsbucket &ndash;force</p>
+<h1 id="s3-ls-commands">s3 ls commands</h1>
+<p>aws s3 ls
+aws s3 ls s3://tgsbucket
+aws s3 ls s3://tgsbucket &ndash;recursive
+aws s3 ls s3://tgsbucket &ndash;recursive  &ndash;human-readable &ndash;summarize</p>
+<h1 id="s3-cp-commands">s3 cp commands</h1>
+<p>aws s3 cp getdata.php s3://tgsbucket
+aws s3 cp /local/dir/data s3://tgsbucket &ndash;recursive
+aws s3 cp s3://tgsbucket/getdata.php /local/dir/data
+aws s3 cp s3://tgsbucket/ /local/dir/data &ndash;recursive
+aws s3 cp s3://tgsbucket/init.xml s3://backup-bucket
+aws s3 cp s3://tgsbucket s3://backup-bucket &ndash;recursive</p>
+<h1 id="s3-mv-commands">s3 mv commands</h1>
+<p>aws s3 mv source.json s3://tgsbucket
+aws s3 mv s3://tgsbucket/getdata.php /home/project
+aws s3 mv s3://tgsbucket/source.json s3://backup-bucket
+aws s3 mv /local/dir/data s3://tgsbucket/data &ndash;recursive
+aws s3 mv s3://tgsbucket s3://backup-bucket &ndash;recursive</p>
+<h1 id="s3-rm-commands">s3 rm commands</h1>
+<p>aws s3 rm s3://tgsbucket/queries.txt
+aws s3 rm s3://tgsbucket &ndash;recursive</p>
+<h1 id="s3-sync-commands">s3 sync commands</h1>
+<p>aws s3 sync backup s3://tgsbucket
+aws s3 sync s3://tgsbucket/backup /tmp/backup
+aws s3 sync s3://tgsbucket s3://backup-bucket</p>
+<h1 id="s3-bucket-website">s3 bucket website</h1>
+<p>aws s3 website s3://tgsbucket/ &ndash;index-document index.html &ndash;error-document error.html</p>
+<h1 id="s3-presign-url-default-3600-seconds">s3 presign url (default 3600 seconds)</h1>
+<p>aws s3 presign s3://tgsbucket/dnsrecords.txt
+aws s3 presign s3://tgsbucket/dnsrecords.txt &ndash;expires-in 60</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&text=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&title=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&is_video=false&description=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&title=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&title=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&name=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet&description=For%20my%20quick%20reference%2c%20I%26rsquo%3bve%20created%20this%20cheat%20sheet%20on%20managing%20files%20in%20AWS%20S3%20bucket.%20Here%20it%20is%3a%0as3%20make%20bucket%20%28create%20bucket%29%20aws%20s3%20mb%20s3%3a%2f%2ftgsbucket%20%26ndash%3bregion%20us-west-2%0as3%20remove%20bucket%20aws%20s3%20rb%20s3%3a%2f%2ftgsbucket%20aws%20s3%20rb%20s3%3a%2f%2ftgsbucket%20%26ndash%3bforce%0as3%20ls%20commands%20aws%20s3%20ls%20aws%20s3%20ls%20s3%3a%2f%2ftgsbucket%20aws%20s3%20ls%20s3%3a%2f%2ftgsbucket%20%26ndash%3brecursive%20aws%20s3%20ls%20s3%3a%2f%2ftgsbucket%20%26ndash%3brecursive%20%26ndash%3bhuman-readable%20%26ndash%3bsummarize%0as3%20cp%20commands%20aws%20s3%20cp%20getdata." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-01-10-s3_cli%2f&t=Essential%20AWS%20S3%20CLI%20Command%20Cheat%20Sheet" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jesse Lima 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

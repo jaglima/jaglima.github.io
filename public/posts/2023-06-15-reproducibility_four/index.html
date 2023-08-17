@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Data, Features Scoring and Evaluation provenance | Jesse Lima</title>
+  <link rel = 'canonical' href = 'https://example.com/posts/2023-06-15-reproducibility_four/'>
+  <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Data, Features Scoring and Evaluation provenance" />
+<meta property="og:description" content="Conceptual layers in Machine Learning pipelines.
+Going one step further into the real-life provenance questions, a good start is to adopt some terminology to prepare our way.
+In Sugimura and Hartl (2018), a modular taxonomy is proposed to address the challenge of reproducible Machine Learning pipelines. According to the authors, a pipeline can be modularized into data, feature, scoring, and evaluation layers. Modularizing the pipeline in this way showed itself a natural mode to pose the problem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/2023-06-15-reproducibility_four/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-15T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data, Features Scoring and Evaluation provenance"/>
+<meta name="twitter:description" content="Conceptual layers in Machine Learning pipelines.
+Going one step further into the real-life provenance questions, a good start is to adopt some terminology to prepare our way.
+In Sugimura and Hartl (2018), a modular taxonomy is proposed to address the challenge of reproducible Machine Learning pipelines. According to the authors, a pipeline can be modularized into data, feature, scoring, and evaluation layers. Modularizing the pipeline in this way showed itself a natural mode to pose the problem."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://example.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://example.com/posts/2023-06-08-reproducibility_five/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://example.com/posts/2023-06-23-reproducibility_six/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&text=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&title=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&is_video=false&description=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&title=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&title=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&name=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance&description=Conceptual%20layers%20in%20Machine%20Learning%20pipelines.%0aGoing%20one%20step%20further%20into%20the%20real-life%20provenance%20questions%2c%20a%20good%20start%20is%20to%20adopt%20some%20terminology%20to%20prepare%20our%20way.%0aIn%20Sugimura%20and%20Hartl%20%282018%29%2c%20a%20modular%20taxonomy%20is%20proposed%20to%20address%20the%20challenge%20of%20reproducible%20Machine%20Learning%20pipelines.%20According%20to%20the%20authors%2c%20a%20pipeline%20can%20be%20modularized%20into%20data%2c%20feature%2c%20scoring%2c%20and%20evaluation%20layers.%20Modularizing%20the%20pipeline%20in%20this%20way%20showed%20itself%20a%20natural%20mode%20to%20pose%20the%20problem." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&t=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Data, Features Scoring and Evaluation provenance
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-06-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-06-15</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          1 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/sor" rel="tag">SoR</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ucsc" rel="tag">UCSC</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/reproducibility" rel="tag">reproducibility</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/data-science" rel="tag">Data Science</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/machine-learning" rel="tag">Machine Learning</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p><strong>Conceptual layers in Machine Learning pipelines.</strong></p>
+<p>Going one step further into the real-life provenance questions, a good start is to adopt some terminology to prepare our way.</p>
+<p><img src="/images/pipeline4.png" alt="Experiments"></p>
+<p>In Sugimura and Hartl (2018), a modular taxonomy is proposed to address the challenge of reproducible Machine Learning pipelines. According to the authors, a pipeline can be modularized into data, feature, scoring, and evaluation layers. Modularizing the pipeline in this way showed itself a natural mode to pose the problem. We will use the same approach in our posts defining each layer as follows:</p>
+<p>Data layer: a data layer should provide access to all data sources to guarantee data provenance. It must guarantee the provenance of all data transformation related to data exploration actions performed by Data Scientists.</p>
+<p>Feature layer: Although it shares some resemblance with data exploration, this layer is responsible for feature generation in a transparent, reusable, and scalable manner. Each feature must have its sources uniquely and clearly defined, and implementation and transformation details must be accessible through provenance.</p>
+<p>Scoring Layer: The scoring layer transforms features into predictions. It should be compatible with multiple machine-learning libraries and allows workflows of more sophisticated approaches, for instance, an ensemble of models.</p>
+<p>Evaluation Layer: The last step in the process of ensuring model reproducibility involves the evaluation layer. This layer can check the equivalence of two models as well as evaluate the relative performance of an arbitrary number of models. It must allow any model performance metrics the problem might need (AUC, RMSE, log-loss). Finally, it can be used to monitor production models, to check how closely the predictions on live traffic match the training predictions.</p>
+<p>All that being said, we are ready to assess the overall space of Machine Learning solutions available in the current MLOPs market. It will be the subject of our next post.</p>
+<p><strong>Bibliography:</strong></p>
+<p>Sugimura, R., et al. &ldquo;Building a reproducible machine learning pipeline.&rdquo; (2018)</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&text=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&title=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&is_video=false&description=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&title=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&title=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&name=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance&description=Conceptual%20layers%20in%20Machine%20Learning%20pipelines.%0aGoing%20one%20step%20further%20into%20the%20real-life%20provenance%20questions%2c%20a%20good%20start%20is%20to%20adopt%20some%20terminology%20to%20prepare%20our%20way.%0aIn%20Sugimura%20and%20Hartl%20%282018%29%2c%20a%20modular%20taxonomy%20is%20proposed%20to%20address%20the%20challenge%20of%20reproducible%20Machine%20Learning%20pipelines.%20According%20to%20the%20authors%2c%20a%20pipeline%20can%20be%20modularized%20into%20data%2c%20feature%2c%20scoring%2c%20and%20evaluation%20layers.%20Modularizing%20the%20pipeline%20in%20this%20way%20showed%20itself%20a%20natural%20mode%20to%20pose%20the%20problem." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-15-reproducibility_four%2f&t=Data%2c%20Features%20Scoring%20and%20Evaluation%20provenance" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jesse Lima 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

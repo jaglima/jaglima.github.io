@@ -1,7 +1,7 @@
 +++
 author = "Jesse Lima"
 title = "noWorkflow as provenance capture tool"
-date = "2023-06-08"
+date = "2023-06-23"
 tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR"]
 +++

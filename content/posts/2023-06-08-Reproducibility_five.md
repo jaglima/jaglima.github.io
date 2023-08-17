@@ -1,7 +1,7 @@
 +++
 author = "Jesse Lima"
 title = "MLOps Tooling and reproducibility"
-date = "2023-06-12"
+date = "2023-06-08"
 tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR"]
 +++

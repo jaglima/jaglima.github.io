@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> MLOps Tooling and reproducibility | Jesse Lima</title>
+  <link rel = 'canonical' href = 'https://example.com/posts/2023-06-08-reproducibility_five/'>
+  <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="MLOps Tooling and reproducibility" />
+<meta property="og:description" content="A market overview.
+As we discussed in the previous post link here, the Data Science experiments and Machine Learning pipelines are composed of layers or stages that have some resemblance across projects. With the emergence of IA, organizations have been looking for solutions that encompass these steps making MLOps workflow no longer complicated.
+Many projects have been initiated to meet the challenges of MLOps. They vary from point solutions to attend just one step in the process to broad scopes, aiming for end-to-end management." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/2023-06-08-reproducibility_five/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-08T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MLOps Tooling and reproducibility"/>
+<meta name="twitter:description" content="A market overview.
+As we discussed in the previous post link here, the Data Science experiments and Machine Learning pipelines are composed of layers or stages that have some resemblance across projects. With the emergence of IA, organizations have been looking for solutions that encompass these steps making MLOps workflow no longer complicated.
+Many projects have been initiated to meet the challenges of MLOps. They vary from point solutions to attend just one step in the process to broad scopes, aiming for end-to-end management."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://example.com/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://example.com/posts/2023-06-02-reproducibility_three/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://example.com/posts/2023-06-15-reproducibility_four/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&text=MLOps%20Tooling%20and%20reproducibility" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&title=MLOps%20Tooling%20and%20reproducibility" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&is_video=false&description=MLOps%20Tooling%20and%20reproducibility" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=MLOps%20Tooling%20and%20reproducibility&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&title=MLOps%20Tooling%20and%20reproducibility" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&title=MLOps%20Tooling%20and%20reproducibility" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&name=MLOps%20Tooling%20and%20reproducibility&description=A%20market%20overview.%0aAs%20we%20discussed%20in%20the%20previous%20post%20link%20here%2c%20the%20Data%20Science%20experiments%20and%20Machine%20Learning%20pipelines%20are%20composed%20of%20layers%20or%20stages%20that%20have%20some%20resemblance%20across%20projects.%20With%20the%20emergence%20of%20IA%2c%20organizations%20have%20been%20looking%20for%20solutions%20that%20encompass%20these%20steps%20making%20MLOps%20workflow%20no%20longer%20complicated.%0aMany%20projects%20have%20been%20initiated%20to%20meet%20the%20challenges%20of%20MLOps.%20They%20vary%20from%20point%20solutions%20to%20attend%20just%20one%20step%20in%20the%20process%20to%20broad%20scopes%2c%20aiming%20for%20end-to-end%20management." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&t=MLOps%20Tooling%20and%20reproducibility" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        MLOps Tooling and reproducibility
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-06-08</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/sor" rel="tag">SoR</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ucsc" rel="tag">UCSC</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/reproducibility" rel="tag">reproducibility</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/data-science" rel="tag">Data Science</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/machine-learning" rel="tag">Machine Learning</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p><strong>A market overview.</strong></p>
+<p>As we discussed in the previous post <a href="/content/posts/2023-06-08-Reproducibility_four.md">link here</a>, the Data Science experiments and Machine Learning pipelines are composed of layers or stages that have some resemblance across projects. With the emergence of IA, organizations have been looking for solutions that encompass these steps making MLOps workflow no longer complicated.</p>
+<p><img src="/images/pipeline5.png" alt="Experiments"></p>
+<p>Many projects have been initiated to meet the challenges of MLOps. They vary from point solutions to attend just one step in the process to broad scopes, aiming for end-to-end management. Some are available as software packages, others as SaaS.</p>
+<p>Curiously, most of these tools end up offering features in different layers we have discussed (i.e. data, feature, scoring, and evaluation), which is evidence of a market in an exploratory process. This lack of standards makes any assessment difficult. Some projects try to incorporate any low-hanging fruit feature into their core functionality. Then, they come up with a tool with elements of all layers.</p>
+<p>Keeping in mind the division into data, feature, scoring, and evaluation from here, there are two groups of tools oriented to the initial phases of the discovery/research process. They are:</p>
+<p><strong>Data and Pipeline Versioning</strong>: Platforms dealing with ingestion, processing, and exposing of features for model training and inference. They also enable collaboration and discoverability of already existing Feature Sets throughout the organization. Provide provenance and lineage for data in different levels of complexity.</p>
+<p><strong>Metadata Stores/Experiment Trackers</strong>: they are specifically built to store metadata about ML experiments and expose it to stakeholders. They help the debugging, comparing, and collaborating on experiments. It is possible to divide in Experiment Tracker and a Model Registry.</p>
+<p>On the other hand, there are projects offering reproducibility elements like hyperparameter search, experiment versioning, etc. However, they are better suited for projects in the production/monitoring phases. They are:</p>
+<p><strong>Pipeline frameworks</strong>: They operate within the realm of production, similar to Data Engineering workflows. Their usual goal is to allow any ML/AI products to be served across a wide range of architectures and integrate all the low-hanging fruits along the way. For instance, pipelines adding hyperparameter optimization tasks, experiment tracking integrations, boilerplate containerized deployment, etc.</p>
+<p><strong>Deployment and Observability</strong>: They focus on deploying models for real-time inference and monitoring model quality once they are deployed in production. Their aim is to facilitate post-deployment control tasks such as monitoring feature drift, conducting A/B testing, and more.</p>
+<p>With real world examples, we can mention some interesting cases:</p>
+<p>The only tool offering coverage for all aforementioned layers is Weights &amp; Biases. It is a paid SaaS solution.</p>
+<p>In the data pipeline versioning DVC and  Pachyderm are two candidates there shows some resemblance. DVC appears to work jointly with Git and with a Git-based approach. Pachyderm seems more complex and oriented to Kubernetes clusters and cloud solutions.</p>
+<p>There exist specific tools exclusively for feature management like Hopsworks, and Featureform.</p>
+<p>The pipeline framework candidates are Kubeflow, ZenML, Dagster, or Polyaxon. The Kubeflow is the more emblematic case here. It is an initiative from the Kubernetes community to deploy and manage an ML stack on Kubernetes.</p>
+<p>The Metadata Stores/Experiment Trackers examples are MLFlow and Neptune.</p>
+<p>As deployment and observability examples we can mention H2O, DataRobot, or Seldon. All of them are specialized in makes easier the deployment monitoring of ML products in production. As commented earlier, they touch on reproducibility but while in production, not in experimental phases.</p>
+<p>As final comments, there are as many tools as there are approaches to implementing machine learning operations. There exist solutions attending the common cloud machine learning engineer in their preferred stack. Other solutions aim to attend to the typical data scientist craving to deploy their models in any architecture available. Other approaches are &ldquo;automation oriented&rdquo;,  trying to allow the citizen data scientist to deploy as smoothly as possible or the experimental teams. All of them touch on reproducibility in some ways. None of them seems a one-stop-shop solution that encompasses all needs.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&text=MLOps%20Tooling%20and%20reproducibility" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&title=MLOps%20Tooling%20and%20reproducibility" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&is_video=false&description=MLOps%20Tooling%20and%20reproducibility" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=MLOps%20Tooling%20and%20reproducibility&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&title=MLOps%20Tooling%20and%20reproducibility" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&title=MLOps%20Tooling%20and%20reproducibility" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&name=MLOps%20Tooling%20and%20reproducibility&description=A%20market%20overview.%0aAs%20we%20discussed%20in%20the%20previous%20post%20link%20here%2c%20the%20Data%20Science%20experiments%20and%20Machine%20Learning%20pipelines%20are%20composed%20of%20layers%20or%20stages%20that%20have%20some%20resemblance%20across%20projects.%20With%20the%20emergence%20of%20IA%2c%20organizations%20have%20been%20looking%20for%20solutions%20that%20encompass%20these%20steps%20making%20MLOps%20workflow%20no%20longer%20complicated.%0aMany%20projects%20have%20been%20initiated%20to%20meet%20the%20challenges%20of%20MLOps.%20They%20vary%20from%20point%20solutions%20to%20attend%20just%20one%20step%20in%20the%20process%20to%20broad%20scopes%2c%20aiming%20for%20end-to-end%20management." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-08-reproducibility_five%2f&t=MLOps%20Tooling%20and%20reproducibility" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jesse Lima 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

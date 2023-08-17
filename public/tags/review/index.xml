@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>review on Jesse Lima</title>
+    <link>https://example.com/tags/review/</link>
+    <description>Recent content in review on Jesse Lima</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jesse Lima</copyright>
+    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thinking in Bets (part three)</title>
+      <link>https://example.com/posts/2021-11-16-thinking_in_bets_three/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/2021-11-16-thinking_in_bets_three/</guid>
+      <description>Scientific thinking consists in avoiding all the illusory aspects of reality to focus on the ground truth, the crude factual reality. And to achieve it, being a poker player or a decision-maker, you must go around all the pitfalls that reality, society, and your ego veil in order to make your life soft and sweet. To avoid it, and go towards the principal point of the book thesis, Mrs. Duck recommends framing your decision analysis like a bet as the definitive turning point to leverage up our decision-making.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in Bets (part two)</title>
+      <link>https://example.com/posts/2021-11-03-thinking_in_bets_two/</link>
+      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/2021-11-03-thinking_in_bets_two/</guid>
+      <description>In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke&amp;rsquo;s book &amp;ldquo;Thinking in bets&amp;rdquo; about real-world decision-making.
+The problem of learning under uncertainty .
+When making decisions, someone must come up with a supporting belief to take their decision. Such belief can come from diverse sources: their experiences, theoretical knowledge, training, intuition, prejudices, or just herd behavior.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in Bets (part one)</title>
+      <link>https://example.com/posts/2021-11-01-thinking_in_bets_one/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/2021-11-01-thinking_in_bets_one/</guid>
+      <description>In studying (and modeling) decision-making methods for real-world competitive situations, game theorists have identified two very clear distinctions between games. In this essay, we will discuss the differences between such games and freely comment on the ideas from Annie Duke&amp;rsquo;s book &amp;ldquo;Thinking in bets&amp;rdquo; about real-world decision-making.
+.
+Complete and incomplete games To illustrate the concept of complete and incomplete information games, let&amp;rsquo;s turn to poker and chess&amp;rsquo;s opposite characteristics.</description>
+    </item>
+    
+  </channel>
+</rss>

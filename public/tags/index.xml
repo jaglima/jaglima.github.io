@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jesse Lima</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on Jesse Lima</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jesse Lima</copyright>
+    <lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Science</title>
+      <link>https://example.com/tags/data-science/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://example.com/tags/machine-learning/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reproducibility</title>
+      <link>https://example.com/tags/reproducibility/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/reproducibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SoR</title>
+      <link>https://example.com/tags/sor/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/sor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>https://example.com/tags/ucsc/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/ucsc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://example.com/tags/aws/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>commands</title>
+      <link>https://example.com/tags/commands/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/commands/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>s3</title>
+      <link>https://example.com/tags/s3/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://example.com/tags/cli/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>config</title>
+      <link>https://example.com/tags/config/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/config/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>book</title>
+      <link>https://example.com/tags/book/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>essay</title>
+      <link>https://example.com/tags/essay/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/essay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game theory</title>
+      <link>https://example.com/tags/game-theory/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/game-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heuristics</title>
+      <link>https://example.com/tags/heuristics/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/heuristics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>https://example.com/tags/review/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/review/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
