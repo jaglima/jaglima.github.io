@@ -9,6 +9,8 @@ I am a Brazilian technologist, not so young, and an occasional backpacker. For m
 
 I enjoy being outdoors, going to the gym, indulging in good food and beer. In my free time, I engage in various small obsessions depending on how life presents them to me. These can range from woodworking to poker playing.  
 
+I decided to start this blog to fulfill some inner aspirations. The first of these aspirations is to take a page out of Paul Graham's book. I love [that blog](http://paulgraham.com/) he keeps feeding year after year and thought I could build one by my own. The second reason is that a Twitter account, LinkedIn, and even Instagram don't meet my needs for creating a personal space predominantly focused on text and sheltered from the noise of social media.
+
 # Academic
 
 I studied Meteorology with a major in Computer Science. Then I pursued a MSc in Computer Science. Since my MSc experience I keep studing here and there in an indepentend way. After some time between academia and industry I discovered that I like at most going after the theory and methods aiming to build things than the opposite. So, I'm frequently engaged in research and experimental stuff but not necessarilty inside pure researche. 
