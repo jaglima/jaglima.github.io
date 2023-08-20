@@ -5,9 +5,12 @@ date: 2021-08-24 17:51:42
 
 # Personal 
 
-I am a Brazilian technologist, not so young, and an occasional backpacker. For most of my life, I have lived between the city of São Paulo and the countryside, where I grew up and where my parents still reside.
+I decided to start this blog to fulfill some inner aspirations. The first of these aspirations is to take a page out of Paul Graham's book. I love [that blog](http://paulgraham.com/) he keeps feeding year after year and thought I could build one by my own. The second reason is that a Twitter account, LinkedIn, and even Instagram don't meet my needs for creating a personal space predominantly focused on text and sheltered from the noise of social media.
 
-I enjoy being outdoors, going to the gym, indulging in good food and beer. In my free time, I engage in various small obsessions depending on how life presents them to me. These can range from woodworking to poker playing.  
+I am a Brazilian technology professional, not so young, and an occasional backpacker. For most of my life, I have lived between the city of São Paulo and the countryside, where I grew up and where my parents still live.
+
+I enjoy being outdoors, going to the gym, indulging in good food and beer. In my free time, I engage in various small obsessions depending on how life presents them to me. These can range from woodworking to poker playing, flyfishing, gym and running.  
+
 
 # Academic
 
