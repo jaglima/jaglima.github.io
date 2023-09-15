@@ -3,10 +3,11 @@ author = "Jesse Lima"
 title = "noWorkflow as provenance capture tool"
 date = "2023-07-15"
 tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
-category = ["blog", "reproducibility", "SoR"]
+category = ["blog", "reproducibility", "SoR", "noworkflow"]
 +++
 
 __noWorkflow __
+
 
 ![Experiments](/images/noworkflow.png)
 
