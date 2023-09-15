@@ -6,7 +6,6 @@ tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR", "noworkflow"]
 +++
 
-__noWorkflow __
 
 A typical workflow in DS/ML projects is well described by the CRISP-DM [2] and precede phases of deployment and production in the whole lifecycle of DS/ML projects. In the same manner, [[3], [4], [5]], points out that Machine Learning pipelines are composed of well-defined layers (or stages) through its lifecycle. The emergence of IA in real world applications stressed the almost artisanal ways of creating and managing analytical experiments and reinforced that there is room to make things more efficiently.
 
