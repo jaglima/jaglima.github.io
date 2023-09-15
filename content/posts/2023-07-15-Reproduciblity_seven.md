@@ -1,13 +1,13 @@
 +++
 author = "Jesse Lima"
-title = "noWorkflow as provenance capture tool"
+title = "noWorkflow as a experiment management tool"
 date = "2023-07-15"
 tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR", "noworkflow"]
 +++
 
 __noWorkflow __
-
+A typical workflow in DS/ML projects is well described by the CRISP-DM [2] and precede phases of deployment and production in the whole lifecycle of DS/ML projects. In the same manner, [[3], [4], [5]], points out that Machine Learning pipelines are composed of well-defined layers (or stages) through its lifecycle. The emergence of IA in real world applications stressed the almost artisanal ways of creating and managing analytical experiments and reinforced that there is room to make things more efficiently.
 
 ![Experiments](/images/noworkflow.png)
 
@@ -28,3 +28,11 @@ Finally, in our research, we confirmed that there is an open spot in the managem
 **Bibliography:**
 
 [1] [J. F. Pimentel, L. Murta, V. Braganholo, and J. Freire, “Understanding and improving the quality and reproducibility of Jupyter notebooks,” Empirical Software Engineering, vol. 26, no. 4, p. 65, 2021.]
+
+[2] [F. Martínez-Plumed et al., “CRISP-DM twenty years later: From data mining processes to data science trajectories,” IEEE Trans. Knowl. Data Eng., vol. 33, no. 8, pp. 3048–3061, 2019.]
+
+[3] [P. Sugimura and F. Hartl, “Building a reproducible machine learning pipeline,” arXiv preprint arXiv:1810. 04570, 2018.]
+
+[4] [N. A. Lynnerup, L. Nolling, R. Hasle, and J. Hallam, “A Survey on Reproducibility by Evaluating Deep Reinforcement Learning Algorithms on Real-World Robots,” in Proceedings of the Conference on Robot Learning, L. P. Kaelbling, D. Kragic, and K. Sugiura, Eds., in Proceedings of Machine Learning Research, vol. 100. PMLR, 30 Oct--01 Nov 2020, pp. 466–489.]
+
+[5] [A. Masood, A. Hashmi, A. Masood, and A. Hashmi, “AIOps: predictive analytics & machine learning in operations,” Cognitive Computing Recipes: Artificial Intelligence Solutions Using Microsoft Cognitive Services and TensorFlow, pp. 359–382, 2019.]
