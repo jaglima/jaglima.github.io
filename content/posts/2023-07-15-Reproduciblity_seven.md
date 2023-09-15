@@ -1,15 +1,16 @@
 +++
 author = "Jesse Lima"
-title = "noWorkflow as a experiment management tool"
+title = "noWorkflow as an experiment management tool"
 date = "2023-07-15"
 tags = ["SoR", "UCSC", "reproducibility", "Data Science", "Machine Learning"]
 category = ["blog", "reproducibility", "SoR", "noworkflow"]
 +++
 
 __noWorkflow __
+
 A typical workflow in DS/ML projects is well described by the CRISP-DM [2] and precede phases of deployment and production in the whole lifecycle of DS/ML projects. In the same manner, [[3], [4], [5]], points out that Machine Learning pipelines are composed of well-defined layers (or stages) through its lifecycle. The emergence of IA in real world applications stressed the almost artisanal ways of creating and managing analytical experiments and reinforced that there is room to make things more efficiently.
 
-![Experiments](/images/noworkflow.png)
+![Crisp Schema](/images/crisp.png)
 
 Specifically for this project, our focus is in the initial stages of computational scientific experiments. As studied in [1], in this phase, experiments are i) implemented by people as prototypes, ii) with minor focus on pipeline design and iii) in tools like Notebooks, that mix documentation, visualization and code with no required sequential structure. These three practices impact reproducibility and efficiency and are prone to create technical debts. However, tools like noWorkflow show a huge potential in such scenarios. It is promising because they i) demands a minimal setup to be functional, ii) works well with almost nonexistent workflows iii) require minimal additional intrusive code among the experimental one and iv) integrates well with Notebooks that are the typical artifact in these experiments.
 
