@@ -16,7 +16,7 @@ I enjoy being outdoors, going to the gym, indulging in good food and beer. In my
 
 I studied Meteorology with a major in Computer Science. Then I pursued a MSc in Computer Science. Since my MSc experience I keep studing here and there in an indepentend way. After some time between academia and industry I discovered that I like at most going after the theory and methods aiming to build things than the opposite. So, I'm frequently engaged in research and experimental stuff but not necessarilty inside pure researche. 
 
-# Professionaly
+# Professional
 
 I have a taste for investigation and pioneering. I had my best times being part of inaugural teams, being the first one (more than once) in some positions where I worked. 
 

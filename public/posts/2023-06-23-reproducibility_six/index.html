@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> noWorkflow as provenance capture tool | Jesse Lima</title>
-  <link rel = 'canonical' href = 'https://example.com/posts/2023-06-23-reproducibility_six/'>
+  <link rel = 'canonical' href = 'https://jaglima.github.io/posts/2023-06-23-reproducibility_six/'>
   <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -19,7 +19,7 @@
 <meta property="og:description" content="MLOps tools, Jupyter Notebooks and noWorkflow
 We briefly discussed some MLOps tools that offer provenance in this previous post. We encountered a rich and diverse ecosystem with multiple tools allowing different levels of reproducibility. By levels, we consider i) tools allowing provenance at different stages of a typical experiment and ii) tools that are more suitable for the experimental phases of a project, while others fit better for post-deployment phases." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.com/posts/2023-06-23-reproducibility_six/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://jaglima.github.io/posts/2023-06-23-reproducibility_six/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-06-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-06-23T00:00:00+00:00" />
 
@@ -33,7 +33,7 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
     
   
   
-  <link rel="stylesheet" href="https://example.com/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+  <link rel="stylesheet" href="https://jaglima.github.io/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
 
   
   
@@ -45,7 +45,7 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
   
 
   
-<link rel="icon" type="image/png" href="https://example.com/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://jaglima.github.io/images/favicon.ico" />
 
   
   
@@ -64,11 +64,11 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Archives</a></li>
          
-        <li><a href="/tags">Tags</a></li>
+        <li><a href="/about">About me</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="/projects">Projects</a></li>
         
       </ul>
     </span>
@@ -77,11 +77,17 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
       <ul>
         
         <li>
-          <a class="icon" href=" https://example.com/posts/2023-06-15-reproducibility_four/" aria-label="Previous">
+          <a class="icon" href=" https://jaglima.github.io/posts/2023-06-15-reproducibility_four/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
+        
+        <li>
+          <a class="icon" href="https://jaglima.github.io/posts/2023-07-15-reproduciblity_seven/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
@@ -109,47 +115,47 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&text=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&text=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&is_video=false&description=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&is_video=false&description=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=noWorkflow%20as%20provenance%20capture%20tool&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=noWorkflow%20as%20provenance%20capture%20tool&body=Check out this article: https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&name=noWorkflow%20as%20provenance%20capture%20tool&description=MLOps%20tools%2c%20Jupyter%20Notebooks%20and%20noWorkflow%0aWe%20briefly%20discussed%20some%20MLOps%20tools%20that%20offer%20provenance%20in%20this%20previous%20post.%20We%20encountered%20a%20rich%20and%20diverse%20ecosystem%20with%20multiple%20tools%20allowing%20different%20levels%20of%20reproducibility.%20By%20levels%2c%20we%20consider%20i%29%20tools%20allowing%20provenance%20at%20different%20stages%20of%20a%20typical%20experiment%20and%20ii%29%20tools%20that%20are%20more%20suitable%20for%20the%20experimental%20phases%20of%20a%20project%2c%20while%20others%20fit%20better%20for%20post-deployment%20phases." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&name=noWorkflow%20as%20provenance%20capture%20tool&description=MLOps%20tools%2c%20Jupyter%20Notebooks%20and%20noWorkflow%0aWe%20briefly%20discussed%20some%20MLOps%20tools%20that%20offer%20provenance%20in%20this%20previous%20post.%20We%20encountered%20a%20rich%20and%20diverse%20ecosystem%20with%20multiple%20tools%20allowing%20different%20levels%20of%20reproducibility.%20By%20levels%2c%20we%20consider%20i%29%20tools%20allowing%20provenance%20at%20different%20stages%20of%20a%20typical%20experiment%20and%20ii%29%20tools%20that%20are%20more%20suitable%20for%20the%20experimental%20phases%20of%20a%20project%2c%20while%20others%20fit%20better%20for%20post-deployment%20phases." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&t=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&t=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -247,11 +253,11 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/posts">Writings</a></li>
+          <li><a href="/posts">Archives</a></li>
          
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/about">About me</a></li>
          
-          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
         
       </ul>
     </div>
@@ -271,47 +277,47 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&text=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&text=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&is_video=false&description=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&is_video=false&description=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=noWorkflow%20as%20provenance%20capture%20tool&body=Check out this article: https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=noWorkflow%20as%20provenance%20capture%20tool&body=Check out this article: https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&title=noWorkflow%20as%20provenance%20capture%20tool" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&name=noWorkflow%20as%20provenance%20capture%20tool&description=MLOps%20tools%2c%20Jupyter%20Notebooks%20and%20noWorkflow%0aWe%20briefly%20discussed%20some%20MLOps%20tools%20that%20offer%20provenance%20in%20this%20previous%20post.%20We%20encountered%20a%20rich%20and%20diverse%20ecosystem%20with%20multiple%20tools%20allowing%20different%20levels%20of%20reproducibility.%20By%20levels%2c%20we%20consider%20i%29%20tools%20allowing%20provenance%20at%20different%20stages%20of%20a%20typical%20experiment%20and%20ii%29%20tools%20that%20are%20more%20suitable%20for%20the%20experimental%20phases%20of%20a%20project%2c%20while%20others%20fit%20better%20for%20post-deployment%20phases." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&name=noWorkflow%20as%20provenance%20capture%20tool&description=MLOps%20tools%2c%20Jupyter%20Notebooks%20and%20noWorkflow%0aWe%20briefly%20discussed%20some%20MLOps%20tools%20that%20offer%20provenance%20in%20this%20previous%20post.%20We%20encountered%20a%20rich%20and%20diverse%20ecosystem%20with%20multiple%20tools%20allowing%20different%20levels%20of%20reproducibility.%20By%20levels%2c%20we%20consider%20i%29%20tools%20allowing%20provenance%20at%20different%20stages%20of%20a%20typical%20experiment%20and%20ii%29%20tools%20that%20are%20more%20suitable%20for%20the%20experimental%20phases%20of%20a%20project%2c%20while%20others%20fit%20better%20for%20post-deployment%20phases." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fexample.com%2fposts%2f2023-06-23-reproducibility_six%2f&t=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-06-23-reproducibility_six%2f&t=noWorkflow%20as%20provenance%20capture%20tool" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -347,11 +353,11 @@ We briefly discussed some MLOps tools that offer provenance in this previous pos
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Archives</a></li>
          
-        <li><a href="/tags">Tags</a></li>
+        <li><a href="/about">About me</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="/projects">Projects</a></li>
         
       </ul>
     </nav>

@@ -2,28 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Science on Jesse Lima</title>
-    <link>https://example.com/tags/data-science/</link>
+    <link>https://jaglima.github.io/tags/data-science/</link>
     <description>Recent content in Data Science on Jesse Lima</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jesse Lima</copyright>
-    <lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>noWorkflow as an experiment management tool</title>
+      <link>https://jaglima.github.io/posts/2023-07-15-reproduciblity_seven/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/posts/2023-07-15-reproduciblity_seven/</guid>
+      <description>A typical workflow in DS/ML projects is well described by the CRISP-DM [2] and precede phases of deployment and production in the whole lifecycle of DS/ML projects. In the same manner, [[3], [4], [5]], points out that Machine Learning pipelines are composed of well-defined layers (or stages) through its lifecycle. The emergence of IA in real world applications stressed the almost artisanal ways of creating and managing analytical experiments and reinforced that there is room to make things more efficiently.</description>
+    </item>
+    
     <item>
       <title>noWorkflow as provenance capture tool</title>
-      <link>https://example.com/posts/2023-06-23-reproducibility_six/</link>
+      <link>https://jaglima.github.io/posts/2023-06-23-reproducibility_six/</link>
       <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/2023-06-23-reproducibility_six/</guid>
+      <guid>https://jaglima.github.io/posts/2023-06-23-reproducibility_six/</guid>
       <description>MLOps tools, Jupyter Notebooks and noWorkflow
 We briefly discussed some MLOps tools that offer provenance in this previous post. We encountered a rich and diverse ecosystem with multiple tools allowing different levels of reproducibility. By levels, we consider i) tools allowing provenance at different stages of a typical experiment and ii) tools that are more suitable for the experimental phases of a project, while others fit better for post-deployment phases.</description>
     </item>
     
     <item>
       <title>Data, Features Scoring and Evaluation provenance</title>
-      <link>https://example.com/posts/2023-06-15-reproducibility_four/</link>
+      <link>https://jaglima.github.io/posts/2023-06-15-reproducibility_four/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/2023-06-15-reproducibility_four/</guid>
+      <guid>https://jaglima.github.io/posts/2023-06-15-reproducibility_four/</guid>
       <description>Conceptual layers in Machine Learning pipelines.
 Going one step further into the real-life provenance questions, a good start is to adopt some terminology to prepare our way.
 In Sugimura and Hartl (2018), a modular taxonomy is proposed to address the challenge of reproducible Machine Learning pipelines. According to the authors, a pipeline can be modularized into data, feature, scoring, and evaluation layers. Modularizing the pipeline in this way showed itself a natural mode to pose the problem.</description>
@@ -31,10 +40,10 @@ In Sugimura and Hartl (2018), a modular taxonomy is proposed to address the chal
     
     <item>
       <title>MLOps Tooling and reproducibility</title>
-      <link>https://example.com/posts/2023-06-08-reproducibility_five/</link>
+      <link>https://jaglima.github.io/posts/2023-06-08-reproducibility_five/</link>
       <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/2023-06-08-reproducibility_five/</guid>
+      <guid>https://jaglima.github.io/posts/2023-06-08-reproducibility_five/</guid>
       <description>A market overview.
 As we discussed in the previous post link here, the Data Science experiments and Machine Learning pipelines are composed of layers or stages that have some resemblance across projects. With the emergence of IA, organizations have been looking for solutions that encompass these steps making MLOps workflow no longer complicated.
 Many projects have been initiated to meet the challenges of MLOps. They vary from point solutions to attend just one step in the process to broad scopes, aiming for end-to-end management.</description>
@@ -42,10 +51,10 @@ Many projects have been initiated to meet the challenges of MLOps. They vary fro
     
     <item>
       <title>Irreproducibility sources in ML, reproducibility and provenance</title>
-      <link>https://example.com/posts/2023-06-02-reproducibility_three/</link>
+      <link>https://jaglima.github.io/posts/2023-06-02-reproducibility_three/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/2023-06-02-reproducibility_three/</guid>
+      <guid>https://jaglima.github.io/posts/2023-06-02-reproducibility_three/</guid>
       <description>Reproducibility and provenance in Machine Learning.
 The paper by Gundersen et al. (2022) provides an interesting description of the sources of irreproducibility in Machine Learning. The authors have compiled an extensive list of factors that can lead to irreproducibility in machine learning experiments. According to them, irreproducibility can arise from the following causes:
 Study factors: selective tuning, p-hacking, p-fishing, experiment initialization, unsuited experimental design.
@@ -54,20 +63,20 @@ Algorithm factors: related to algorithmic questions such as hyperparameter optim
     
     <item>
       <title>Reproducibility concepts</title>
-      <link>https://example.com/posts/2023-05-28-reproducibility_two/</link>
+      <link>https://jaglima.github.io/posts/2023-05-28-reproducibility_two/</link>
       <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/2023-05-28-reproducibility_two/</guid>
+      <guid>https://jaglima.github.io/posts/2023-05-28-reproducibility_two/</guid>
       <description>In the literature, it is possible to find different references and conceptualizations about reproducibility. Usually, a newcomer tends to use the term &amp;ldquo;reproducibility&amp;rdquo; across different stages of a workflow with different meanings. In these cases, terms like repeatability and replicability come into play.
 Lynnerup et al. (2020) disserted about what they called a &amp;ldquo;confused taxonomy&amp;rdquo; that creates &amp;ldquo;confusion on the meaning of repeatability, reproducibility, and replicability, which, in turn, negatively affects the overall development of science.</description>
     </item>
     
     <item>
       <title>Reproducibility and Experiments Workflows</title>
-      <link>https://example.com/posts/2023-05-24-reproducibility_one/</link>
+      <link>https://jaglima.github.io/posts/2023-05-24-reproducibility_one/</link>
       <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/2023-05-24-reproducibility_one/</guid>
+      <guid>https://jaglima.github.io/posts/2023-05-24-reproducibility_one/</guid>
       <description>This is my first post in a serie about my participation in the 1st Summer of Reproducibility at UCSC, 2023.
 Since my early experiences in the field of science, reproducibility has always been essential. The scientific method mandates that any scientific achievement should be replicable by anyone, anywhere, provided they adhere to the same premises. This requirement ensures that there exists a causal relationship between causes and consequences. If a particular implication consistently holds true after being repeatedly subjected to experimentation, it can be considered a scientific truth.</description>
     </item>

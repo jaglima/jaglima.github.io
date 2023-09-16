@@ -2,144 +2,144 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jesse Lima</title>
-    <link>https://example.com/tags/</link>
+    <link>https://jaglima.github.io/tags/</link>
     <description>Recent content in Tags on Jesse Lima</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jesse Lima</copyright>
-    <lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Science</title>
-      <link>https://example.com/tags/data-science/</link>
-      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/tags/data-science/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/data-science/</guid>
+      <guid>https://jaglima.github.io/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>https://example.com/tags/machine-learning/</link>
-      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/tags/machine-learning/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/machine-learning/</guid>
+      <guid>https://jaglima.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reproducibility</title>
-      <link>https://example.com/tags/reproducibility/</link>
-      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/tags/reproducibility/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/reproducibility/</guid>
+      <guid>https://jaglima.github.io/tags/reproducibility/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SoR</title>
-      <link>https://example.com/tags/sor/</link>
-      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/tags/sor/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/sor/</guid>
+      <guid>https://jaglima.github.io/tags/sor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UCSC</title>
-      <link>https://example.com/tags/ucsc/</link>
-      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/tags/ucsc/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/ucsc/</guid>
+      <guid>https://jaglima.github.io/tags/ucsc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AWS</title>
-      <link>https://example.com/tags/aws/</link>
+      <link>https://jaglima.github.io/tags/aws/</link>
       <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/aws/</guid>
+      <guid>https://jaglima.github.io/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>commands</title>
-      <link>https://example.com/tags/commands/</link>
+      <link>https://jaglima.github.io/tags/commands/</link>
       <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/commands/</guid>
+      <guid>https://jaglima.github.io/tags/commands/</guid>
       <description></description>
     </item>
     
     <item>
       <title>s3</title>
-      <link>https://example.com/tags/s3/</link>
+      <link>https://jaglima.github.io/tags/s3/</link>
       <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/s3/</guid>
+      <guid>https://jaglima.github.io/tags/s3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>https://example.com/tags/cli/</link>
+      <link>https://jaglima.github.io/tags/cli/</link>
       <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/cli/</guid>
+      <guid>https://jaglima.github.io/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>config</title>
-      <link>https://example.com/tags/config/</link>
+      <link>https://jaglima.github.io/tags/config/</link>
       <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/config/</guid>
+      <guid>https://jaglima.github.io/tags/config/</guid>
       <description></description>
     </item>
     
     <item>
       <title>book</title>
-      <link>https://example.com/tags/book/</link>
+      <link>https://jaglima.github.io/tags/book/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/book/</guid>
+      <guid>https://jaglima.github.io/tags/book/</guid>
       <description></description>
     </item>
     
     <item>
       <title>essay</title>
-      <link>https://example.com/tags/essay/</link>
+      <link>https://jaglima.github.io/tags/essay/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/essay/</guid>
+      <guid>https://jaglima.github.io/tags/essay/</guid>
       <description></description>
     </item>
     
     <item>
       <title>game theory</title>
-      <link>https://example.com/tags/game-theory/</link>
+      <link>https://jaglima.github.io/tags/game-theory/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/game-theory/</guid>
+      <guid>https://jaglima.github.io/tags/game-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>heuristics</title>
-      <link>https://example.com/tags/heuristics/</link>
+      <link>https://jaglima.github.io/tags/heuristics/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/heuristics/</guid>
+      <guid>https://jaglima.github.io/tags/heuristics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>review</title>
-      <link>https://example.com/tags/review/</link>
+      <link>https://jaglima.github.io/tags/review/</link>
       <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/review/</guid>
+      <guid>https://jaglima.github.io/tags/review/</guid>
       <description></description>
     </item>
     

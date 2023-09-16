@@ -16,18 +16,18 @@ url = "/"
 weight = 1
 
 [[menu.main]]
-name = "Writings"
+name = "Archives"
 url = "/posts"
 weight = 2
 
 [[menu.main]]
-name = "Tags"
-url = "/tags"
+name = "About me"
+url = "/about"
 weight = 3
 
 [[menu.main]]
-name = "About me"
-url = "/about"
+name = "Projects"
+url = "/projects"
 weight = 4
 
 [markup]
@@ -51,13 +51,13 @@ weight = 4
   colortheme = "classic" # dark, light, white, or classic
   rss = false # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
-  showAllPostsArchive = true # default
+  showAllPostsArchive = false # default
 
   # Home page settings
   description = "This is my personal blog. Here I write about tech, science, IA and other related stuff"
-  mainSection = "posts" # your main section
-  showAllPostsOnHomePage = true # default
-  postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
+  mainSection = "archives" # your main section
+  showAllPostsOnHomePage = false # default
+  postsOnHomePage = 100 # this option will be ignored if showAllPostsOnHomePage is set to true
   tagsOverview = true # show tags overview by default.
   showProjectsList = true # show projects list by default (if projects data file exists).
   projectsUrl = "https://github.com/gohugoio" # title link for projects list
