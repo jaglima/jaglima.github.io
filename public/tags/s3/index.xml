@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jesse Lima</copyright>
-    <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Essential AWS S3 CLI Command Cheat Sheet</title>
-      <link>https://jaglima.github.io/posts/2023-01-10-s3_cli/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/posts/2022-04-10-s3_cli/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jaglima.github.io/posts/2023-01-10-s3_cli/</guid>
+      <guid>https://jaglima.github.io/posts/2022-04-10-s3_cli/</guid>
       <description>For my quick reference, I&amp;rsquo;ve created this cheat sheet on managing files in AWS S3 bucket. Here it is:
 s3 make bucket (create bucket) aws s3 mb s3://tgsbucket &amp;ndash;region us-west-2
 s3 remove bucket aws s3 rb s3://tgsbucket aws s3 rb s3://tgsbucket &amp;ndash;force

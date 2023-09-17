@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jesse Lima</copyright>
-    <lastBuildDate>Tue, 03 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>15 AWS Configure Command Examples</title>
-      <link>https://jaglima.github.io/posts/2023-01-03-aws_configure/</link>
-      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      <link>https://jaglima.github.io/posts/2022-04-03-aws_configure/</link>
+      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://jaglima.github.io/posts/2023-01-03-aws_configure/</guid>
+      <guid>https://jaglima.github.io/posts/2022-04-03-aws_configure/</guid>
       <description>To use AWS CLI, you need to first make sure your AWS access key credentials are configured properly.
 Once you have your AWS access_key_id and secret_access_key, you can either manually add them to the credentials file, or use aws configure command to set it up on your local machine.
 This tutorials explains all the options available in aws configure command along with how to manage multiple profiles:
