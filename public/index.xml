@@ -95,7 +95,7 @@ s3 cp commands aws s3 cp getdata.</description>
     </item>
     
     <item>
-      <title>15 AWS Configure Command Examples to Manage Multiple Profiles for CLI</title>
+      <title>15 AWS Configure Command Examples</title>
       <link>https://jaglima.github.io/posts/2023-01-03-aws_configure/</link>
       <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -156,12 +156,25 @@ Complete and incomplete games To illustrate the concept of complete and incomple
     </item>
     
     <item>
-      <title>About me</title>
+      <title>Projects</title>
       <link>https://jaglima.github.io/projects/</link>
       <pubDate>Tue, 24 Aug 2021 17:51:42 +0000</pubDate>
       
       <guid>https://jaglima.github.io/projects/</guid>
-      <description>Projects This session is a miscelaneous of the subjects I&amp;rsquo;ve been working in the past years.</description>
+      <description>Projects This session is a miscelaneous of the subjects I&amp;rsquo;ve been working in the past years.
+My last contribution to Open Source was in the noWorkflow.
+I contributed with this Sklearn bugs.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
+      <link>https://jaglima.github.io/thoughts/</link>
+      <pubDate>Tue, 24 Aug 2021 17:51:42 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/thoughts/</guid>
+      <description>Thoughts Just a miscelaneous of excerpts, random thoughts and phases on stuff I believe. Constantly working in progress.
+The bias is to underestimate the true costs of winning and to overestimate the benefits of the outcome. Most &amp;ldquo;victories&amp;rdquo; are Pyrrhic - Nassim Taleb
+The problem is not people being uneducated. The problem is that people are educated just enough to believe what they have been taught, and not educated enough to question anything from what they have been taught.</description>
     </item>
     
   </channel>
