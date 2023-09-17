@@ -9,6 +9,17 @@
     <copyright>Jesse Lima</copyright>
     <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://jaglima.github.io/2023-09-16-smart_vs_big_minded/</link>
+      <pubDate>Sat, 16 Sep 2023 17:51:42 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/2023-09-16-smart_vs_big_minded/</guid>
+      <description>Smart versus Big Minded These days I stambled upon an excerpt about the indian neuroscientist Ramachandran and I was hooked on a passage. It is about the Ramachandran passage through Standford. I will just reproduce it here:
+The idea that science were problem-driven rather than technique-driven is an astonishing conclusion for me. More than once, I&amp;rsquo;ve been hounted by this idea without being able to express it.
+The point here is that in the current industry, there are many tools needed for an application.</description>
+    </item>
+    
+    <item>
       <title>noWorkflow as an experiment management tool</title>
       <link>https://jaglima.github.io/posts/2023-07-15-reproduciblity_seven/</link>
       <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
@@ -168,12 +179,23 @@ I contributed with this Sklearn bugs.</description>
     
     <item>
       <title>Thoughts</title>
+      <link>https://jaglima.github.io/essays/</link>
+      <pubDate>Tue, 24 Aug 2021 17:51:42 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/essays/</guid>
+      <description>Essays Here is a list of essays, that have a different tone than blog posts.
+Thinking in bets
+Smart versus big minded</description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
       <link>https://jaglima.github.io/thoughts/</link>
       <pubDate>Tue, 24 Aug 2021 17:51:42 +0000</pubDate>
       
       <guid>https://jaglima.github.io/thoughts/</guid>
       <description>Thoughts Just a miscelaneous of excerpts, random thoughts and phases on stuff I believe. Constantly working in progress.
-The bias is to underestimate the true costs of winning and to overestimate the benefits of the outcome. Most &amp;quot;victories&amp;quot; are Pyrrhic - Nassim Taleb
+The bias is to underestimate the true costs of winning and to overestimate the benefits of the outcome. Most &amp;ldquo;victories&amp;rdquo; are Pyrrhic - Nassim Taleb
 The problem is not people being uneducated. The problem is that people are educated just enough to believe what they have been taught, and not educated enough to question anything from what they have been taught.</description>
     </item>
     
