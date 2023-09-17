@@ -10,9 +10,9 @@ __MLOps tools, Jupyter Notebooks and noWorkflow__
 
 We briefly discussed some MLOps tools that offer provenance in this previous post. We encountered a rich and diverse ecosystem with multiple tools allowing different levels of reproducibility. By levels, we consider i) tools allowing provenance at different stages of a typical experiment and ii) tools that are more suitable for the experimental phases of a project, while others fit better for post-deployment phases.
 
-We are specifically interested in tools that capture provenance in Machine Learning and Data Science typical experiments. These tools should capture provenance in feature, score, and evaluation layers (as discussed in this post). Furthermore, our focus is primarily on the experimental phases experiment’s lifecycle rather than the deployment phases.
-
 ![Experiments](/images/pipeline6.png)
+
+We are specifically interested in tools that capture provenance in Machine Learning and Data Science typical experiments. These tools should capture provenance in feature, score, and evaluation layers (as discussed in this post). Furthermore, our focus is primarily on the experimental phases experiment’s lifecycle rather than the deployment phases.
 
 In this scenario, i'm particularly enthusiastic about the noWorkflow project. According to the authors in Pimentel (2017), noWorkflow is an open-source tool designed to systematically and transparently collect provenance from Python scripts. Noworkflow captures data about the script execution and tracks the evolution of the script over time. In recent versions, the tool has evolved to enable provenance capture of experiments through Jupyter Notebooks.
 

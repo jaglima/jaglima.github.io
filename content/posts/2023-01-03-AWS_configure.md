@@ -1,6 +1,6 @@
 +++
 author = 'Jesse Lima'
-title = "15 AWS Configure Command Examples to Manage Multiple Profiles for CLI"
+title = "15 AWS Configure Command Examples"
 tags = ["AWS", "cli", "config"]
 date = "2023-01-03"
 category = ["reference", "commands", "tech"]
