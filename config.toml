@@ -32,11 +32,6 @@ weight = 3
 [[menu.main]]
 name = "Essays"
 url = "/essays"
-weight = 5
-
-[[menu.main]]
-name = "Bookshelf"
-url = "/bookshelf"
 weight = 4
 
 [markup]
@@ -63,9 +58,9 @@ weight = 4
   showAllPostsArchive = false # default
 
   # Home page settings
-  description = "This is my personal blog. Here I write about tech, science, IA and other related stuff"
+  description = "This is my personal blog where I write about work, technical topics, science, and related ideas."
   mainSection = "archives" # your main section
-  showAllPostsOnHomePage = false # default
+  showAllPostsOnHomePage = true # default
   postsOnHomePage = 100 # this option will be ignored if showAllPostsOnHomePage is set to true
   tagsOverview = true # show tags overview by default.
   showProjectsList = true # show projects list by default (if projects data file exists).
