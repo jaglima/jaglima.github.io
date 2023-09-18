@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Provenance of Machine Learning experiments with noWorkflow | Jesse Lima</title>
+  <link rel = 'canonical' href = 'https://jaglima.github.io/posts/2023-09-17-reproducibility_eight/'>
+  <meta name="description" content="This is my personal blog. Here I write about tech, science, IA and other related stuff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Provenance of Machine Learning experiments with noWorkflow" />
+<meta property="og:description" content="In many academic and industrial teams involved in Data Science and Machine Learning, we frequently find ourselves starting experiments with minimal structure, basic setups, and a multitude of hypotheses. This initial stage is all about exploration, where our primary goal is to validate if our hypotheses hold.
+However, as these experiments progress, they quickly grow in complexity, and managing them becomes challenging. Reproducing a specific trial with its unique setup becomes cumbersome, and handling multiple trials can seem nearly impossible." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaglima.github.io/posts/2023-09-17-reproducibility_eight/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-17T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Provenance of Machine Learning experiments with noWorkflow"/>
+<meta name="twitter:description" content="In many academic and industrial teams involved in Data Science and Machine Learning, we frequently find ourselves starting experiments with minimal structure, basic setups, and a multitude of hypotheses. This initial stage is all about exploration, where our primary goal is to validate if our hypotheses hold.
+However, as these experiments progress, they quickly grow in complexity, and managing them becomes challenging. Reproducing a specific trial with its unique setup becomes cumbersome, and handling multiple trials can seem nearly impossible."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://jaglima.github.io/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://jaglima.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/bookshelf">Bookshelf</a></li>
+         
+        <li><a href="/essays">Essays</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://jaglima.github.io/2023-09-16-smart_vs_big_minded/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&text=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&title=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&is_video=false&description=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow&body=Check out this article: https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&title=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&title=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&name=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow&description=In%20many%20academic%20and%20industrial%20teams%20involved%20in%20Data%20Science%20and%20Machine%20Learning%2c%20we%20frequently%20find%20ourselves%20starting%20experiments%20with%20minimal%20structure%2c%20basic%20setups%2c%20and%20a%20multitude%20of%20hypotheses.%20This%20initial%20stage%20is%20all%20about%20exploration%2c%20where%20our%20primary%20goal%20is%20to%20validate%20if%20our%20hypotheses%20hold.%0aHowever%2c%20as%20these%20experiments%20progress%2c%20they%20quickly%20grow%20in%20complexity%2c%20and%20managing%20them%20becomes%20challenging.%20Reproducing%20a%20specific%20trial%20with%20its%20unique%20setup%20becomes%20cumbersome%2c%20and%20handling%20multiple%20trials%20can%20seem%20nearly%20impossible." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&t=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducing-the-noworkflow">Introducing the noWorkflow</a></li>
+    <li><a href="#noworkflow-setup">Noworkflow Setup</a></li>
+    <li><a href="#fraud-detection-use-case">Fraud Detection use case</a></li>
+    <li><a href="#noworkflow-at-the-spotlight">NoWorkflow at the spotlight</a></li>
+    <li><a href="#experiment-comparison">Experiment comparison</a></li>
+    <li><a href="#tagged-multi-trial-plots">Tagged multi-trial plots</a></li>
+    <li><a href="#multi-trial-outputs">Multi trial outputs</a></li>
+    <li><a href="#final-words">Final words</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Provenance of Machine Learning experiments with noWorkflow
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-09-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-09-17</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          7 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/sor" rel="tag">SoR</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ucsc" rel="tag">UCSC</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/reproducibility" rel="tag">reproducibility</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/data-science" rel="tag">Data Science</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/machine-learning" rel="tag">Machine Learning</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>In many academic and industrial teams involved in Data Science and Machine Learning, we frequently find ourselves starting experiments with minimal structure, basic setups, and a multitude of hypotheses. This initial stage is all about exploration, where our primary goal is to validate if our hypotheses hold.</p>
+<p>However, as these experiments progress, they quickly grow in complexity, and managing them becomes challenging. Reproducing a specific trial with its unique setup becomes cumbersome, and handling multiple trials can seem nearly impossible.</p>
+<p>In this blog post, we introduce you to the <a href="https://github.com/gems-uff/noworkflow">noWorkflow</a> package, with exciting features born out of the <a href="https://ucsc-ospo.github.io/osre/">Summer of Reproducibility</a> project in 2023. We&rsquo;ll demonstrate its capabilities with a practical use case, highlighting on how it can streamline your workflow.</p>
+<p>You can find the code of this tutorial on our <a href="https://github.com/jaglima/noworkflow_usecase">GitHUb repository</a>.</p>
+<h2 id="introducing-the-noworkflow">Introducing the noWorkflow</h2>
+<p>According to the noWorkflow developers&rsquo; team, the primary goal of noWorkflow is to <em>&quot;&hellip;allow scientists to benefit from provenance data analysis even when they don&rsquo;t use a workflow system.&quot;</em>. Unlike other tools, <em>&ldquo;noWorkflow captures provenance from Python scripts without needing a version control system or any other environment&rdquo;</em>. It is particularly interesting when we are in the scenario described above, where we lack any structured system at the beginning of experiments. In fact, after going through the docs, we can verify that noWorkflow provides:</p>
+<ul>
+<li>Command-line accessibility</li>
+<li>Seamless integration with Jupyter Notebooks</li>
+<li>Minimal setup requirements in your environment</li>
+<li>Elimination of the need for virtual machines or containers in its setup</li>
+<li>Workflow-free operation</li>
+<li>Open source</li>
+<li>Framework agnostic</li>
+</ul>
+<p>On top of that, in the OSPO Summer of Reproducibility Program, we added additional features to enhance DS/ML experiment reproducibility. In this regard, we introduced:</p>
+<ul>
+<li>The ability to tag variables of interest, allowing researchers to track all operations related to a specific variable&rsquo;s value</li>
+<li>A feature to display dependencies of tagged variables</li>
+<li>Tools for comparing the history of a tagged variable between two trials</li>
+<li>The option to retrieve the values of a tagged variable across all trials within an experiment</li>
+<li><em>A bonus</em>: Achieving all of this with minimal intrusive code added to your notebook</li>
+</ul>
+<p>To showcase how these features can take your experiment management to another level, we have chosen a classical problem in Fraud Detection as a Machine Learning application to test the noWorkflow.</p>
+<h2 id="noworkflow-setup">Noworkflow Setup</h2>
+<p>To perform this tutorial, we highly recommend setting up a Conda environment on your system, which involves installing the noWorkflow package and Jupyter Lab. To reproduce the experimental Notebooks, you can clone this repository as well. Take advantage of the <a href="requirements.txt"><em>requirements.txt</em></a> file to accelerate your setup with pip tools.</p>
+<p>First, clone our use case tutorial to your local machine and create a separate environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git clone https://github.com/jaglima/noworkflow_usecase.git
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#8be9fd;font-style:italic">cd</span> noworkflow_usecase
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4"># Create a conda env</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>conda create -n noworkflow <span style="color:#8be9fd;font-style:italic">python</span><span style="color:#ff79c6">=</span>3.10
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>conda activate noworkflow
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>pip install -r requirements.txt
+</span></span></code></pre></div><p>Install the noWorkflow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#6272a4"># install noworkflow</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>git clone https://github.com/gems-uff/noworkflow.git
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#8be9fd;font-style:italic">cd</span> noworkflow
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>pip install -e capture<span style="color:#ff79c6">[</span>demo<span style="color:#ff79c6">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>pip install <span style="color:#8be9fd;font-style:italic">jupyter</span><span style="color:#ff79c6">==</span>1.0.0
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>jupyter nbextension install --py --sys-prefix noworkflow
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>jupyter nbextension <span style="color:#8be9fd;font-style:italic">enable</span> noworkflow --py --sys-prefix
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#6272a4"># install noworkflow jupyter kernel</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>now kernel
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#8be9fd;font-style:italic">cd</span> ..
+</span></span></code></pre></div><p>Finally, fire up the Jupyter Lab to start the fun.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>jupyter lab
+</span></span></code></pre></div><p>In the noworkflow_usecase directory, you will find the dataset directory and five Notebooks. <a href="https://github.com/jaglima/noworkflow_usecase/now_usecase_part_1.ipynb">Notebook 1</a> and <a href="https://github.com/jaglima/noworkflow_usecase/now_usecase_part_2.ipynb">Notebook 2</a> represent two distinct trials of a Fraud Detection experiment we will go through next sessions. <a href="https://github.com/jaglima/noworkflow_usecase/now_usecase_part_3.ipynb">Notebook 3</a> wraps up a comparison between trials 1 and 2. <a href="https://github.com/jaglima/noworkflow_usecase/now_usecase_part_4.ipynb">Notebook 4</a> presents another trial using a different approach. <a href="https://github.com/jaglima/noworkflow_usecase/now_usecase_part_5.ipynb">Notebook 5</a> offers a comparison between trials 1 and 4.</p>
+<h2 id="fraud-detection-use-case">Fraud Detection use case</h2>
+<p>Fraud detection is a typical use case that encompasses classical challenges in ML projects. It often involves dealing with imbalanced datasets, requiring various feature transformations, and follows the usual steps of Machine Learning projects. Here we based this <a href="https://link.springer.com/article/10.1186/s40537-023-00684-w">work</a> on making use of <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud">Kaggle Credit Card Fraud Detection Dataset</a>, initially published by Worldline and the Universite Libre de Bruxelles (ULB).</p>
+<p>To get started with this tutorial, you&rsquo;ll need to select the noWorkflow kernel in the Jupyter Notebooks you have at hand and then execute the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>df <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>read_csv(<span style="color:#f1fa8c">&#39;dataset/creditcard.csv&#39;</span>, encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>X <span style="color:#ff79c6">=</span> df<span style="color:#ff79c6">.</span>drop(<span style="color:#f1fa8c">&#39;Class&#39;</span>, axis<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>y <span style="color:#ff79c6">=</span> df[<span style="color:#f1fa8c">&#39;Class&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#6272a4"># Here we are stamping pca_components as a now_variable, and started </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#6272a4"># monitoring it</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>pca_components <span style="color:#ff79c6">=</span> now_variable(<span style="color:#f1fa8c">&#39;pca_components&#39;</span>, <span style="color:#bd93f9">3</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>pca <span style="color:#ff79c6">=</span> PCA(n_components<span style="color:#ff79c6">=</span>pca_components)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>X_pca <span style="color:#ff79c6">=</span> pca<span style="color:#ff79c6">.</span>fit_transform(X)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#6272a4"># Same here with random_seed</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>random_seed <span style="color:#ff79c6">=</span> now_variable(<span style="color:#f1fa8c">&#39;random_seed&#39;</span>, <span style="color:#bd93f9">42</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>rus <span style="color:#ff79c6">=</span> RandomUnderSampler(random_state<span style="color:#ff79c6">=</span>random_seed)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>X_resampled, y_resampled <span style="color:#ff79c6">=</span> rus<span style="color:#ff79c6">.</span>fit_resample(X_pca, y)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#6272a4"># Same with test_dim</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>test_dim <span style="color:#ff79c6">=</span> now_variable(<span style="color:#f1fa8c">&#39;test_dim&#39;</span>, <span style="color:#bd93f9">0.2</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>X_train, X_test, y_train, y_test <span style="color:#ff79c6">=</span> train_test_split(X_resampled, y_resampled, test_size<span style="color:#ff79c6">=</span>test_dim, random_state<span style="color:#ff79c6">=</span>random_seed)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#6272a4"># Keeping the model type </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>rf <span style="color:#ff79c6">=</span> now_variable(<span style="color:#f1fa8c">&#39;model&#39;</span>, RandomForestClassifier())
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>rf<span style="color:#ff79c6">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>y_pred <span style="color:#ff79c6">=</span> rf<span style="color:#ff79c6">.</span>predict(X_test)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style="color:#6272a4"># Finally, keeping the metrics roc and f1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>roc_metric <span style="color:#ff79c6">=</span> now_variable(<span style="color:#f1fa8c">&#39;roc_metric&#39;</span>, roc_auc_score(y_test, y_pred))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>f1_metric <span style="color:#ff79c6">=</span> now_variable(<span style="color:#f1fa8c">&#39;f1_metric&#39;</span>, f1_score(y_test, y_pred))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;Random Forest - ROC = </span><span style="color:#f1fa8c">%f</span><span style="color:#f1fa8c">, F1 = </span><span style="color:#f1fa8c">%f</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">%</span> (roc_metric, f1_metric))
+</span></span></code></pre></div><p>After running this snippet, with our parameters rightly tagged, we have our first trial. Additional trials can be generated by changing hyperparameters, feature transformations, models and metrics at the choice of the researcher.</p>
+<h2 id="noworkflow-at-the-spotlight">NoWorkflow at the spotlight</h2>
+<p>When calling the backward_deps(&rsquo;tagged_var_name&rsquo;),
+we receive a list of variables that are involved in the computation of the tagged variable. In this example, if you call it with the &lsquo;roc_metric&rsquo; tag, the output will include all operations that were involved in the construction of its final value. Let&rsquo;s check how it goes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>dict_ops <span style="color:#ff79c6">=</span> backward_deps(<span style="color:#f1fa8c">&#39;roc_metric&#39;</span>, <span style="color:#ff79c6">False</span>)
+</span></span></code></pre></div><p>![](/static/images/backward_deps.png&quot; alt=&ldquo;drawing&rdquo; width=70%/&gt;</p>
+<p>The output is in Python dictionary format, with all the operations in the order they were executed. At the end of the list, you will find the assignment operation where the &lsquo;roc_metric&rsquo; variable is assigned the value of 0.81.</p>
+<p>To preserve these outputs for future comparisons with additional trials, you can save them by invoking:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>trial_id <span style="color:#ff79c6">=</span> __noworkflow__<span style="color:#ff79c6">.</span>trial_id
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>store_operations(trial_id, dict_ops)
+</span></span></code></pre></div><p>The list of currently stored trials can be obtained using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>resume_trials()
+</span></span></code></pre></div><p><img src="/static/images/resume_trials.png" alt=""></p>
+<p>It is presented as a list, where the trial IDs can be referenced by their index.</p>
+<h2 id="experiment-comparison">Experiment comparison</h2>
+<p>Suppose now that you&rsquo;ve already executed a second trial with a different set of parameters. It is done in the use case notebook <a href="now_usecase_part_2.ipynb">here</a>](now_usecase_part_2.ipynb) and we encourage the reader to rerun the previous snippets tweaking some of the hyperparameters to see the impact. By doing this, we can then compare the outcomes of both trials using the trial_intersection_diff() and trial_diff() functions. Let&rsquo;s explore these comparisons.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>trial_intersection_diff(list_id[<span style="color:#bd93f9">0</span>], list_id[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>])
+</span></span></code></pre></div><p>![](/static/images/trial_intersect_diff.png&quot; alt=&ldquo;drawing&rdquo; width=60%/&gt;</p>
+<p>In the previous output, you may have noticed that &lsquo;pca_components&rsquo; has been changed from 3 to 5, and the &rsquo;test_dim&rsquo; size has increased from 0.2 to 0.3. However, please be aware that the vectors, matrices and complex types like &lsquo;y_test&rsquo; and &lsquo;y_pred,&rsquo; are not available for inspection. We acknowledge this limitation and it is on our backlog.</p>
+<p>When running trial_diff(), the function displays the values of variables and function calls in a diff file format, emphasizing the sequence of operations performed. The purpose is to identify any discrepancies that occurred between the two trials. In the side columns, the letters f, n and t mean to (f)irst, (n)ext and (t)op. They are links that allow the user to navigate through the position of the differences detected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>trial_diff(list_id[<span style="color:#bd93f9">0</span>], list_id[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>])
+</span></span></code></pre></div><p>![](/static/images/trial_diff.png&quot; alt=&ldquo;drawing&rdquo; width=80%/&gt;</p>
+<p>In this case, we can easily spot the differences in the &lsquo;pca_components&rsquo; and &rsquo;test_dim&rsquo; provenance as well as differences in their results.</p>
+<h2 id="tagged-multi-trial-plots">Tagged multi-trial plots</h2>
+<p>From a broader perspective, we implemented a multi-trials displaying feature, where we can easily inspect the values of tags across multiple trials. This feature is particularly useful when evaluating the behavior of control variables across various trials and serves as an initial step in facilitating cross-comparisons between features and results in multi-trial experiments.</p>
+<p>In the current implementation of noWorkflow, any tagged variable can be inspected in a mult-trials plot, just by invoking:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>var_tag_plot(<span style="color:#f1fa8c">&#39;roc_metric&#39;</span>)
+</span></span></code></pre></div><p><img src="/static/images/var_tag_plot_roc.png" alt=""></p>
+<p>In this instance, we can see that the best roc_metric was achieved in the experiment trial nicknamed 826c2.</p>
+<p>Similarly, we can examine the f1_metric, which confirms that the best performance was indeed achieved in trial 826c2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>var_tag_plot(<span style="color:#f1fa8c">&#39;f1_metric&#39;</span>)
+</span></span></code></pre></div><p>&lt;img src=&quot;/images/var_tag_plot_f1.png)</p>
+<h2 id="multi-trial-outputs">Multi trial outputs</h2>
+<p>Another feature is the general-purpose plot, that can be used to inspect any tagged variable. The user can also retrieve a pandas DataFrame containing the values, allowing them to create their plots or perform further analysis. In this case, the values are returned as in the example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>var_tag_values(<span style="color:#f1fa8c">&#39;f1_metric&#39;</span>)
+</span></span></code></pre></div><p><img src="/static/images/tag_values_f1.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>var_tag_values(<span style="color:#f1fa8c">&#39;model&#39;</span>)
+</span></span></code></pre></div><p><img src="/static/images/tag_values_model.png" alt=""></p>
+<h2 id="final-words">Final words</h2>
+<p>In this brief tutorial, we have demonstrated how to use noWorkflow to enhance the management of experiments in DS and ML during their initial stages. These features are the foundation for exploring the advantages that noWorkflow offers as a provenance collection tool in the field of data analytics.</p>
+<p>All the features described here have emerged from our research and experience, focusing on critical provenance issues that commonly arise during the early stages of experiments. We trust that the broader community will also find them valuable.</p>
+<p>We would like to express our gratitude to the OSPO Summer of Reproducibility organization and the noWorkflow core team for providing us with this opportunity to contribute to the Open Source community. We invite readers to give noWorkflow a try and share their feedback and experiences. Together, we can take steps towards achieving greater reproducibility and innovation in our work.</p>
+<p>Thank you for embarking on this journey with us.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Archives</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
+         
+          <li><a href="/bookshelf">Bookshelf</a></li>
+         
+          <li><a href="/essays">Essays</a></li>
+         
+          <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducing-the-noworkflow">Introducing the noWorkflow</a></li>
+    <li><a href="#noworkflow-setup">Noworkflow Setup</a></li>
+    <li><a href="#fraud-detection-use-case">Fraud Detection use case</a></li>
+    <li><a href="#noworkflow-at-the-spotlight">NoWorkflow at the spotlight</a></li>
+    <li><a href="#experiment-comparison">Experiment comparison</a></li>
+    <li><a href="#tagged-multi-trial-plots">Tagged multi-trial plots</a></li>
+    <li><a href="#multi-trial-outputs">Multi trial outputs</a></li>
+    <li><a href="#final-words">Final words</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&text=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&title=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&is_video=false&description=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow&body=Check out this article: https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&title=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&title=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&name=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow&description=In%20many%20academic%20and%20industrial%20teams%20involved%20in%20Data%20Science%20and%20Machine%20Learning%2c%20we%20frequently%20find%20ourselves%20starting%20experiments%20with%20minimal%20structure%2c%20basic%20setups%2c%20and%20a%20multitude%20of%20hypotheses.%20This%20initial%20stage%20is%20all%20about%20exploration%2c%20where%20our%20primary%20goal%20is%20to%20validate%20if%20our%20hypotheses%20hold.%0aHowever%2c%20as%20these%20experiments%20progress%2c%20they%20quickly%20grow%20in%20complexity%2c%20and%20managing%20them%20becomes%20challenging.%20Reproducing%20a%20specific%20trial%20with%20its%20unique%20setup%20becomes%20cumbersome%2c%20and%20handling%20multiple%20trials%20can%20seem%20nearly%20impossible." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fjaglima.github.io%2fposts%2f2023-09-17-reproducibility_eight%2f&t=Provenance%20of%20Machine%20Learning%20experiments%20with%20noWorkflow" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jesse Lima 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Archives</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/bookshelf">Bookshelf</a></li>
+         
+        <li><a href="/essays">Essays</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jesse Lima</copyright>
-    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Provenance of Machine Learning experiments with noWorkflow</title>
+      <link>https://jaglima.github.io/posts/2023-09-17-reproducibility_eight/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/posts/2023-09-17-reproducibility_eight/</guid>
+      <description>In many academic and industrial teams involved in Data Science and Machine Learning, we frequently find ourselves starting experiments with minimal structure, basic setups, and a multitude of hypotheses. This initial stage is all about exploration, where our primary goal is to validate if our hypotheses hold.
+However, as these experiments progress, they quickly grow in complexity, and managing them becomes challenging. Reproducing a specific trial with its unique setup becomes cumbersome, and handling multiple trials can seem nearly impossible.</description>
+    </item>
+    
     <item>
       <title></title>
       <link>https://jaglima.github.io/2023-09-16-smart_vs_big_minded/</link>
@@ -179,13 +189,22 @@ I contributed with this Sklearn bugs.</description>
     
     <item>
       <title>Thoughts</title>
+      <link>https://jaglima.github.io/bookshelf/</link>
+      <pubDate>Tue, 24 Aug 2021 17:51:42 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/bookshelf/</guid>
+      <description>Bookshelf A simple list of books I have come across:
+War and Peace - Tolstoi The Alchemical Imagination The inner Will - Assagioli The Shackleton Adventure The Lean Startup - Eric Reils </description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
       <link>https://jaglima.github.io/essays/</link>
       <pubDate>Tue, 24 Aug 2021 17:51:42 +0000</pubDate>
       
       <guid>https://jaglima.github.io/essays/</guid>
       <description>Essays Here is a list of essays, that have a different tone than blog posts.
-Thinking in bets
-Smart versus big minded</description>
+Thinking in bets</description>
     </item>
     
     <item>

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jesse Lima</copyright>
-    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/ucsc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jaglima.github.io/tags/ucsc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Provenance of Machine Learning experiments with noWorkflow</title>
+      <link>https://jaglima.github.io/posts/2023-09-17-reproducibility_eight/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaglima.github.io/posts/2023-09-17-reproducibility_eight/</guid>
+      <description>In many academic and industrial teams involved in Data Science and Machine Learning, we frequently find ourselves starting experiments with minimal structure, basic setups, and a multitude of hypotheses. This initial stage is all about exploration, where our primary goal is to validate if our hypotheses hold.
+However, as these experiments progress, they quickly grow in complexity, and managing them becomes challenging. Reproducing a specific trial with its unique setup becomes cumbersome, and handling multiple trials can seem nearly impossible.</description>
+    </item>
+    
     <item>
       <title>noWorkflow as an experiment management tool</title>
       <link>https://jaglima.github.io/posts/2023-07-15-reproduciblity_seven/</link>
