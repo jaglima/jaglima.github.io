@@ -126,7 +126,7 @@ we receive a list of variables that are involved in the computation of the tagge
 ```python
 dict_ops = backward_deps('roc_metric', False)
 ```
-<img src="./images/backward_deps.png" alt="drawing" width=70%/>
+![](/static/images/backward_deps.png" alt="drawing" width=70%/>
 
 The output is in Python dictionary format, with all the operations in the order they were executed. At the end of the list, you will find the assignment operation where the 'roc_metric' variable is assigned the value of 0.81.
 
@@ -142,7 +142,7 @@ The list of currently stored trials can be obtained using:
 ```python
 resume_trials()
 ```
-<img src="./images/resume_trials.png" alt="drawing" width=40%/>
+![](/static/images/resume_trials.png)
 
 It is presented as a list, where the trial IDs can be referenced by their index.
 
@@ -154,7 +154,7 @@ Suppose now that you've already executed a second trial with a different set of 
 ```python   
 trial_intersection_diff(list_id[0], list_id[-1])
 ```
-<img src="./images/trial_intersect_diff.png" alt="drawing" width=60%/>
+![](/static/images/trial_intersect_diff.png" alt="drawing" width=60%/>
 
 In the previous output, you may have noticed that 'pca_components' has been changed from 3 to 5, and the 'test_dim' size has increased from 0.2 to 0.3. However, please be aware that the vectors, matrices and complex types like 'y_test' and 'y_pred,' are not available for inspection. We acknowledge this limitation and it is on our backlog.
 
@@ -164,7 +164,7 @@ When running trial_diff(), the function displays the values of variables and fun
 trial_diff(list_id[0], list_id[-1])
 ```
 
-<img src="./images/trial_diff.png" alt="drawing" width=80%/>
+![](/static/images/trial_diff.png" alt="drawing" width=80%/>
 
 In this case, we can easily spot the differences in the 'pca_components' and 'test_dim' provenance as well as differences in their results. 
 
@@ -177,7 +177,7 @@ In the current implementation of noWorkflow, any tagged variable can be inspecte
 ```python
 var_tag_plot('roc_metric')
 ```
-<img src="./images/var_tag_plot_roc.png" alt="drawing" width=40%/>
+![](/static/images/var_tag_plot_roc.png)
 
 In this instance, we can see that the best roc_metric was achieved in the experiment trial nicknamed 826c2. 
 
@@ -186,7 +186,7 @@ Similarly, we can examine the f1_metric, which confirms that the best performanc
 var_tag_plot('f1_metric')
 ```
 
-<img src="/images/var_tag_plot_f1.png" alt="drawing" width=40%/>
+<img src="/images/var_tag_plot_f1.png)
 
 ## Multi trial outputs
 
@@ -196,14 +196,13 @@ Another feature is the general-purpose plot, that can be used to inspect any tag
 var_tag_values('f1_metric')
 ```
 
-<img src="/images/tag_values_f1.png" alt="drawing" width=50%/>
+![](/static/images/tag_values_f1.png)
 
 ```python
 var_tag_values('model')
 ```
 
-<img src="/images/tag_values_model.png" alt="drawing" width=70%/>
-
+![](/static/images/tag_values_model.png)
 
 ### Final words
 
