@@ -75,7 +75,7 @@ Finally, fire up the Jupyter Lab to start the fun.
 jupyter lab
 ```
 
-In the noworkflow_usecase directory, you will find the dataset directory and five Notebooks. [Notebook 1](now_usecase_part_1.ipynb) and [Notebook 2](now_usecase_part_2.ipynb) represent two distinct trials of a Fraud Detection experiment we will go through next sessions. [Notebook 3](now_usecase_part_3.ipynb) wraps up a comparison between trials 1 and 2. [Notebook 4](now_usecase_part_4.ipynb) presents another trial using a different approach. [Notebook 5](now_usecase_part_5.ipynb) offers a comparison between trials 1 and 4.
+In the noworkflow_usecase directory, you will find the dataset directory and five Notebooks. [Notebook 1](https://github.com/jaglima/noworkflow_usecase/now_usecase_part_1.ipynb) and [Notebook 2](https://github.com/jaglima/noworkflow_usecase/now_usecase_part_2.ipynb) represent two distinct trials of a Fraud Detection experiment we will go through next sessions. [Notebook 3](https://github.com/jaglima/noworkflow_usecase/now_usecase_part_3.ipynb) wraps up a comparison between trials 1 and 2. [Notebook 4](https://github.com/jaglima/noworkflow_usecase/now_usecase_part_4.ipynb) presents another trial using a different approach. [Notebook 5](https://github.com/jaglima/noworkflow_usecase/now_usecase_part_5.ipynb) offers a comparison between trials 1 and 4.
 
 ## Fraud Detection use case
 
@@ -204,7 +204,7 @@ var_tag_values('model')
 
 ![](/static/images/tag_values_model.png)
 
-### Final words
+## Final words
 
 In this brief tutorial, we have demonstrated how to use noWorkflow to enhance the management of experiments in DS and ML during their initial stages. These features are the foundation for exploring the advantages that noWorkflow offers as a provenance collection tool in the field of data analytics.
 
