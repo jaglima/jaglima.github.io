@@ -185,7 +185,6 @@ Similarly, we can examine the f1_metric, which confirms that the best performanc
 ```python
 var_tag_plot('f1_metric')
 ```
-
 <img src="/images/var_tag_plot_f1.png)
 
 ## Multi trial outputs
@@ -195,13 +194,11 @@ Another feature is the general-purpose plot, that can be used to inspect any tag
 ```python
 var_tag_values('f1_metric')
 ```
-
 ![](/static/images/tag_values_f1.png)
 
 ```python
 var_tag_values('model')
 ```
-
 ![](/static/images/tag_values_model.png)
 
 ## Final words
