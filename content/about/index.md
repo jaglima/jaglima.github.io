@@ -3,6 +3,8 @@ title: About me
 date: 2021-08-24 17:51:42
 ---
 
+*TLDR*: I started this blog to skip the paywall in the most popular text publishers.
+
 # Personal 
 
 I decided to start this blog to fulfill some inner aspirations. The first of these aspirations is playing the Paul Graham here. I love [that blog](http://paulgraham.com/) he keeps feeding year after year and thought I could build one by my own. The second reason is that a Twitter account, LinkedIn, and even Instagram don't meet my needs for creating a personal space predominantly focused on text and sheltered from the noise of social media.
