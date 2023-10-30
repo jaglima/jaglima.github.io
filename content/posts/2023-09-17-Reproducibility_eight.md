@@ -209,5 +209,3 @@ All the features described here have emerged from our research and experience, f
 We would like to express our gratitude to the OSPO Summer of Reproducibility organization and the noWorkflow core team for providing us with this opportunity to contribute to the Open Source community. We invite readers to give noWorkflow a try and share their feedback and experiences. Together, we can take steps towards achieving greater reproducibility and innovation in our work.
 
 Thank you for embarking on this journey with us.
-
-{{< chat cactus-comments >}}
