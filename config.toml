@@ -69,16 +69,16 @@ weight = 4
   showReadTime = true # default
 
   [params.comments]
-    enabled = false # non default
+    enabled = true # non default
     engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
     [params.comments.utterances]
-      repo = "<github_username>/<github_reponame>"
-      label = "hugo-site-name" # you can use however you want to label your name in your repo's issues
+      repo = "https://github.com/jaglima"
+      label = "jaglima" # you can use however you want to label your name in your repo's issues
       theme = "github-light"
     [params.comments.cactuscomments]
-      siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
-      #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
-      #serverName = "" # Defaults to cactus.chat
+      siteName = "jaglima" # see https://cactus.chat/ on how to register your site name
+      serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
+      serverName = "" # Defaults to cactus.chat
 
   # the value of name should be an valid font awesome icon name (brands type)
   # https://fontawesome.com/icons?d=gallery&s=brands
@@ -91,3 +91,8 @@ weight = 4
   [[params.social]]
     name = "email"
     link = "jesselima@protonmail.com"  # no need for "mailto:" in the head
+
+[sitemap]
+  changeFreq = ''
+  filename = 'sitemap.xml'
+  priority = -1
