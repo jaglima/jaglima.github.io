@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Jesse Lima"
 theme = "cactus"
 copyright = "Jesse Lima" # cactus will use title if copyright is not set
-disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
+disqusShortname = "disqus_N5UYfwWytN" # Used when comments is enabled. Cactus will use site title if not set
 googleAnalytics = "G-0S4YSP929R"
 
 # summaryLength = 4
@@ -68,17 +68,13 @@ weight = 4
   show_updated = true # default
   showReadTime = true # default
 
+[services]
+  [services.disqus]
+    shortname = 'disqus_N5UYfwWytN'
+
   [params.comments]
     enabled = true # non default
-    engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
-    [params.comments.utterances]
-      repo = "https://github.com/jaglima"
-      label = "jaglima" # you can use however you want to label your name in your repo's issues
-      theme = "github-light"
-    [params.comments.cactuscomments]
-      siteName = "jaglima" # see https://cactus.chat/ on how to register your site name
-      serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
-      serverName = "" # Defaults to cactus.chat
+    engine = "disqus" # only disqus, utterances, and cactus_comments is supported
 
   # the value of name should be an valid font awesome icon name (brands type)
   # https://fontawesome.com/icons?d=gallery&s=brands
