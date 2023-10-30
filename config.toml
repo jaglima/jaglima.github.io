@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Jesse Lima"
 theme = "cactus"
 copyright = "Jesse Lima" # cactus will use title if copyright is not set
-disqusShortname = "disqus_N5UYfwWytN" # Used when comments is enabled. Cactus will use site title if not set
+disqusShortname = "jaglima" # Used when comments is enabled. Cactus will use site title if not set
 googleAnalytics = "G-0S4YSP929R"
 
 # summaryLength = 4
@@ -70,7 +70,7 @@ weight = 4
 
 [services]
   [services.disqus]
-    shortname = 'disqus_N5UYfwWytN'
+    shortname = 'jaglima'
 
   [params.comments]
     enabled = true # non default
